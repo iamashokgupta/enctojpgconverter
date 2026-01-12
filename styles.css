@@ -1358,6 +1358,12 @@ h6 {
         padding-top: var(--spacing-sm);
         font-size: 0.813rem;
     }
+
+    /* Fix email overflow */
+    a[href^="mailto:"] {
+        word-break: break-all;
+        overflow-wrap: break-word;
+    }
 }
 
 /* Small Mobile (360px and below) */
