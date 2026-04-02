@@ -883,7 +883,6 @@
             // Download Button
             downloadBtn?.addEventListener('click', function () {
                 if (!resizedBlob) return;
-
                 const preset = presets[currentPreset];
                 const link = document.createElement('a');
                 link.href = URL.createObjectURL(resizedBlob);
