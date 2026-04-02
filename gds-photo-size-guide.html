@@ -179,6 +179,7 @@
                     <a href="index.html">Home</a>
                     <a href="#requirements">Requirements</a>
                     <a href="#faq">FAQ</a>
+                    <a href="index.html#reviews">Reviews</a>
                 </nav>
             </div>
         </div>
@@ -579,6 +580,149 @@
                 <span class="keyword-tag">fast gds photo resizer</span>
                 <span class="keyword-tag">GDS online engagement photo tool</span>
                 <span class="keyword-tag">reduce image size in kb for gds</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <h2 class="section-title">What Our Users Say</h2>
+            <p class="reviews-subtitle">Trusted by thousands of applicants worldwide</p>
+
+            <!-- Reviews Summary Bar -->
+            <div class="reviews-summary">
+                <div class="summary-left">
+                    <div class="summary-big-score">4.8</div>
+                    <div class="summary-stars">
+                        <svg class="summary-star filled" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="summary-star filled" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="summary-star filled" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="summary-star filled" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <svg class="summary-star filled" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <div class="summary-count">Based on <strong>1,914</strong> reviews</div>
+                </div>
+                <div class="summary-right">
+                    <div class="rating-bar-row">
+                        <span class="bar-label">5★</span>
+                        <div class="rating-bar">
+                            <div class="rating-bar-fill" style="width: 68%"></div>
+                        </div>
+                        <span class="bar-percent">68%</span>
+                    </div>
+                    <div class="rating-bar-row">
+                        <span class="bar-label">4★</span>
+                        <div class="rating-bar">
+                            <div class="rating-bar-fill" style="width: 22%"></div>
+                        </div>
+                        <span class="bar-percent">22%</span>
+                    </div>
+                    <div class="rating-bar-row">
+                        <span class="bar-label">3★</span>
+                        <div class="rating-bar">
+                            <div class="rating-bar-fill" style="width: 6%"></div>
+                        </div>
+                        <span class="bar-percent">6%</span>
+                    </div>
+                    <div class="rating-bar-row">
+                        <span class="bar-label">2★</span>
+                        <div class="rating-bar">
+                            <div class="rating-bar-fill" style="width: 3%"></div>
+                        </div>
+                        <span class="bar-percent">3%</span>
+                    </div>
+                    <div class="rating-bar-row">
+                        <span class="bar-label">1★</span>
+                        <div class="rating-bar">
+                            <div class="rating-bar-fill" style="width: 1%"></div>
+                        </div>
+                        <span class="bar-percent">1%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Cards Grid -->
+            <div class="reviews-grid" id="reviewsGrid">
+                <!-- JavaScript will populate reviews here -->
+            </div>
+
+            <!-- Pagination Button -->
+            <div class="reviews-load-more">
+                <button class="btn-secondary" id="loadMoreReviews">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+                        <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Show More Reviews
+                </button>
+            </div>
+
+            <!-- Manual Review Submission Form -->
+            <div class="review-form-wrapper">
+                <div class="review-form-header">
+                    <h3>✍️ Share Your Experience</h3>
+                    <p>Your feedback helps other applicants make better slections</p>
+                </div>
+
+                <div id="reviewSuccess" class="review-success" style="display: none;">
+                    <div class="success-icon">✨</div>
+                    <h4>Thank you for your review!</h4>
+                    <p>Your feedback has been submitted and will be visible shortly.</p>
+                    <button class="btn-secondary" id="writeAnotherReview">Write Another Review</button>
+                </div>
+
+                <form id="reviewForm" class="review-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reviewerName">Your Name</label>
+                            <input type="text" id="reviewerName" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewerEmail">Email (optional)</label>
+                            <input type="email" id="reviewerEmail" placeholder="Your email address">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Rating</label>
+                        <div class="form-star-rating" id="formStarRating">
+                            <svg class="form-star" data-rating="1" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="form-star" data-rating="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="form-star" data-rating="3" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="form-star" data-rating="4" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="form-star" data-rating="5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <span class="form-rating-text" id="formRatingText">Select a rating</span>
+                            <input type="hidden" id="selectedRating" value="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewTitle">Review Title</label>
+                        <input type="text" id="reviewTitle" placeholder="Sum up your experience" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewText">Your Review</label>
+                        <textarea id="reviewText" rows="4" placeholder="Tell us more about your experience..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary review-submit-btn">
+                        Submit Review
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 8px;">
+                            <path d="M15.833 2.5L2.5 9.167l5.833 2.5 2.5 5.833 5-15z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </form>
             </div>
         </div>
     </section>
