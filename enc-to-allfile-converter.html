@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>ENC to All Files Converter & Any File to ENC Encrypter</title>
+    <meta name="title" content="ENC to All Files Converter & Any File to ENC Encrypter">
+    <meta name="description"
+        content="Free online tool to convert ENC to JPG, PNG, PDF, and more. Or encrypt any file into a secure .enc file. 100% secure, client-side AES encryption with password protection.">
+    <meta name="keywords"
+        content="convert enc to jpg, enc to png, enc to pdf, enc to all files, file to enc, encrypt to enc, decrypt enc online, enc file converter, AES file encryption, enc image converter">
+    <meta name="author" content="ENC Converter Tool">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enctojpgconverter.online/enc-to-allfile-converter.html">
+    <meta property="og:title" content="ENC to All Files Converter & Any File to ENC Encrypter">
+    <meta property="og:description"
+        content="Free online tool to convert ENC to JPG, PNG, PDF, and more. Or encrypt any file into a secure .enc file. 100% secure, client-side AES encryption with password protection.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://enctojpgconverter.online/enc-to-allfile-converter.html">
+    <meta property="twitter:title" content="ENC to All Files Converter & Any File to ENC Encrypter">
+    <meta property="twitter:description"
+        content="Free online tool to convert ENC to JPG, PNG, PDF, and more. Or encrypt any file into a secure .enc file. 100% secure, client-side AES encryption with password protection.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ENC to All Files & Any File to ENC Converter",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free online file encryption tool. Convert ENC files back to their original formats (ENC to JPG, ENC to PNG, ENC to PDF). Alternatively, encrypt any file format (PDF, JPG, ZIP, MP4) into a secure .enc file using client-side AES-GCM encryption with password protection.",
+      "featureList": [
+        "Convert ENC to JPG, PNG, PDF",
+        "Decrypt ENC to original files",
+        "Encrypt any file to .enc",
+        "Client-side processing (No server upload)",
+        "Military-grade AES-GCM Encryption",
+        "Works offline"
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="url(#logo-gradient)" />
+                        <path d="M20 10L28 15V25L20 30L12 25V15L20 10Z" stroke="white" stroke-width="2"
+                            stroke-linejoin="round" />
+                        <circle cx="20" cy="20" r="3" fill="white" />
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#6366F1" />
+                                <stop offset="1" stop-color="#A855F7" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span>ENC Converter Tool</span>
+                </div>
+                <nav class="nav">
+                    <a href="index.html">ENC to JPG</a>
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#faq">FAQ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Convert <span class="gradient-text">ENC to All Files</span> & Any File to ENC Enc
+                </h1>
+                <p class="hero-subtitle">
+                    Our free online tool allows you to securely decrypt <strong>.enc files</strong> back to their
+                    original formats like <strong>JPG, PNG, PDF, and ZIP</strong>.
+                    You can also protect your sensitive files by encrypting them into a password-protected <strong>.enc
+                        file</strong>.
+                    Everything is powered by military-grade AES-GCM encryption directly in your browser. <strong>No
+                        files are ever uploaded to our servers.</strong>
+                </p>
+                <div class="hero-badges">
+                    <span class="badge">🔒 AES-256 Encryption</span>
+                    <span class="badge">🛡️ Client-Side Only</span>
+                    <span class="badge">📂 Supports Any File</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Converter Section -->
+    <section class="converter-section">
+        <div class="container">
+            <div class="converter-card" style="max-width: 600px; margin: 0 auto;">
+
+                <div class="mode-switcher" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                    <button class="mode-btn active" data-mode="encrypt" id="encryptModeBtn"
+                        style="flex: 1; padding: 12px; border: none; border-radius: 8px; background: #6366F1; color: white; font-weight: 600; cursor: pointer; transition: all 0.3s;">
+                        <span>🔒</span> Encrypt File to .ENC
+                    </button>
+                    <button class="mode-btn" data-mode="decrypt" id="decryptModeBtn"
+                        style="flex: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; background: white; color: #475569; font-weight: 600; cursor: pointer; transition: all 0.3s;">
+                        <span>🔓</span> Decrypt .ENC File
+                    </button>
+                </div>
+
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="32" fill="url(#upload-gradient)" opacity="0.1" />
+                            <path d="M32 44V20M32 20L24 28M32 20L40 28" stroke="url(#upload-gradient)" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M20 44H44" stroke="url(#upload-gradient)" stroke-width="3"
+                                stroke-linecap="round" />
+                            <defs>
+                                <linearGradient id="upload-gradient" x1="0" y1="0" x2="64" y2="64"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#6366F1" />
+                                    <stop offset="1" stop-color="#A855F7" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3 class="upload-title" id="uploadTitle">Drag & Drop any file here</h3>
+                    <p class="upload-subtitle">or click to browse files</p>
+                    <p class="upload-info" id="uploadInfo">Supports PDF, JPG, PNG, ZIP, MP4, and more</p>
+                    <input type="file" id="fileInput" hidden>
+                </div>
+
+                <!-- Password Input (shown when file selected) -->
+                <div class="password-section" id="passwordSection" style="display: none; margin-top: 20px;">
+                    <label for="encryptionKey" id="passwordLabel"
+                        style="display: block; font-weight: 600; margin-bottom: 8px;">Set Encryption Password:</label>
+                    <input type="password" id="encryptionKey" placeholder="Enter a strong password"
+                        style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 16px;">
+                    <p class="password-hint" style="font-size: 13px; color: #64748b; margin-top: 8px;">⚠️ Keep this
+                        password safe. You will need it to decrypt the file later.</p>
+                </div>
+
+                <!-- Progress Section -->
+                <div class="progress-section" id="progressSection" style="display: none; margin-top: 20px;">
+                    <div class="progress-bar"
+                        style="width: 100%; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden;">
+                        <div class="progress-fill" id="progressFill"
+                            style="height: 100%; width: 0%; background: linear-gradient(90deg, #6366F1, #A855F7); transition: width 0.3s ease;">
+                        </div>
+                    </div>
+                    <p class="progress-text" id="progressText"
+                        style="text-align: center; margin-top: 10px; font-size: 14px; color: #475569;">Processing
+                        file...</p>
+                </div>
+
+                <!-- Convert Button -->
+                <button class="btn-primary" id="convertBtn"
+                    style="display: none; width: 100%; margin-top: 20px; justify-content: center;">
+                    <span id="convertBtnText">Encrypt to .ENC</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style="margin-left: 8px;">
+                        <path d="M12 4v2m0 8v2m-4-6h8m-4-6a6 6 0 100 12 6 6 0 000-12z" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <!-- Results Section -->
+                <div class="results-section" id="resultsSection"
+                    style="display: none; margin-top: 20px; text-align: center;">
+                    <div style="padding: 20px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">🔒</div>
+                        <h3 id="resultTitle" style="margin-bottom: 10px; color: #0f172a;">Encryption Complete!</h3>
+                        <p id="resultFileName"
+                            style="font-weight: 600; color: #475569; margin-bottom: 20px; word-break: break-all;"></p>
+                        <a id="downloadLink" href="#" class="btn-primary"
+                            style="display: inline-flex; text-decoration: none;">
+                            Download .ENC File
+                        </a>
+                    </div>
+                    <button id="resetBtn"
+                        style="margin-top: 15px; background: none; border: none; color: #6366F1; font-weight: 500; cursor: pointer;">Encrypt
+                        Another File</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Use Our ENC File Converter?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Client-Side Encryption</h3>
+                    <p>Your files are encrypted entirely within your browser. We never upload, store, or see your files
+                        or passwords.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔑</div>
+                    <h3>Password Protection</h3>
+                    <p>Secure your sensitive documents, images, and archives with a custom password of your choosing.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Conversion</h3>
+                    <p>Leveraging native Web Crypto APIs, our tool encrypts even large files quickly and efficiently.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How to Convert ENC to JPG/PNG or Encrypt Files</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <img src="assets/step_upload.png" alt="Upload File" class="step-image">
+                    <div class="step-number">1</div>
+                    <h3>Upload Your File</h3>
+                    <p>Drag and drop any file (PDF, image, document) or your .enc file into the upload area above.</p>
+                </div>
+                <div class="step-card">
+                    <img src="assets/step_password.png" alt="Set Password" class="step-image">
+                    <div class="step-number">2</div>
+                    <h3>Set/Enter Password</h3>
+                    <p>Enter a secure password to encrypt, or provide the original password to decrypt.</p>
+                </div>
+                <div class="step-card">
+                    <img src="assets/step_download.png" alt="Download File" class="step-image">
+                    <div class="step-number">3</div>
+                    <h3>Convert & Download</h3>
+                    <p>Click the button and instantly download your securely processed file.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Can I convert an ENC file to JPG, PNG, or PDF?</h3>
+                    <p>Yes! Our tool is specifically designed to decrypt and restore ENC files back to their original
+                        state. Whether you want to <strong>convert ENC to JPG</strong>, <strong>ENC to PNG</strong>, or
+                        <strong>ENC to PDF</strong>, simply switch to the "Decrypt .ENC File" mode, enter your password,
+                        and download the original file.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I encrypt any file (PDF, Image, ZIP) into an .enc file?</h3>
+                    <p>Absolutely. You can convert any file format into a secure .enc file. By uploading your file and
+                        setting a password, we encrypt it using military-grade AES-256 GCM encryption, ensuring your
+                        data is fully protected.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is it safe to encrypt my private documents here?</h3>
+                    <p>Yes. The entire encryption and decryption process happens locally in your web browser using
+                        JavaScript. No files are ever uploaded to our servers, ensuring 100% privacy and security.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What happens if I forget my password?</h3>
+                    <p>Because the encryption is done securely and locally, we do not store your passwords. If you
+                        forget the password you used to encrypt the file, the file cannot be recovered or decrypted.
+                        Please keep your passwords safe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#logo-gradient-footer)" />
+                            <path d="M20 10L28 15V25L20 30L12 25V15L20 10Z" stroke="white" stroke-width="2"
+                                stroke-linejoin="round" />
+                            <circle cx="20" cy="20" r="3" fill="white" />
+                            <defs>
+                                <linearGradient id="logo-gradient-footer" x1="0" y1="0" x2="40" y2="40"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#6366F1" />
+                                    <stop offset="1" stop-color="#A855F7" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>ENC Converter</span>
+                    </div>
+                    <p>Free, secure, and fast ENC file tools. Encrypt and decrypt files instantly in your browser.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">ENC to JPG</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-and-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-and-services.html">Terms of Service</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ENC Converter Tool. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Client-Side Encryption Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fileInput = document.getElementById('fileInput');
+            const uploadArea = document.getElementById('uploadArea');
+            const passwordSection = document.getElementById('passwordSection');
+            const encryptionKey = document.getElementById('encryptionKey');
+            const convertBtn = document.getElementById('convertBtn');
+            const progressSection = document.getElementById('progressSection');
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+            const resultsSection = document.getElementById('resultsSection');
+            const resultFileName = document.getElementById('resultFileName');
+            const downloadLink = document.getElementById('downloadLink');
+            const resetBtn = document.getElementById('resetBtn');
+            const uploadTitle = document.getElementById('uploadTitle');
+            const uploadInfo = document.getElementById('uploadInfo');
+
+            const encryptModeBtn = document.getElementById('encryptModeBtn');
+            const decryptModeBtn = document.getElementById('decryptModeBtn');
+            const passwordLabel = document.getElementById('passwordLabel');
+            const convertBtnText = document.getElementById('convertBtnText');
+            const resultTitle = document.getElementById('resultTitle');
+
+            let selectedFile = null;
+            let currentMode = 'encrypt';
+
+            // Mode Switching
+            function setMode(mode) {
+                currentMode = mode;
+                if (mode === 'encrypt') {
+                    encryptModeBtn.style.background = '#6366F1';
+                    encryptModeBtn.style.color = 'white';
+                    encryptModeBtn.style.border = 'none';
+
+                    decryptModeBtn.style.background = 'white';
+                    decryptModeBtn.style.color = '#475569';
+                    decryptModeBtn.style.border = '1px solid #cbd5e1';
+
+                    uploadTitle.textContent = selectedFile ? selectedFile.name : 'Drag & Drop any file here';
+                    uploadInfo.textContent = selectedFile ? `Size: ${(selectedFile.size / (1024 * 1024)).toFixed(2)} MB` : 'Supports PDF, JPG, PNG, ZIP, MP4, and more';
+                    passwordLabel.textContent = 'Set Encryption Password:';
+                    convertBtnText.textContent = 'Encrypt to .ENC';
+                    fileInput.removeAttribute('accept');
+                } else {
+                    decryptModeBtn.style.background = '#6366F1';
+                    decryptModeBtn.style.color = 'white';
+                    decryptModeBtn.style.border = 'none';
+
+                    encryptModeBtn.style.background = 'white';
+                    encryptModeBtn.style.color = '#475569';
+                    encryptModeBtn.style.border = '1px solid #cbd5e1';
+
+                    uploadTitle.textContent = selectedFile ? selectedFile.name : 'Drag & Drop your .enc file here';
+                    uploadInfo.textContent = selectedFile ? `Size: ${(selectedFile.size / (1024 * 1024)).toFixed(2)} MB` : 'Only supports .enc files';
+                    passwordLabel.textContent = 'Enter Decryption Password:';
+                    convertBtnText.textContent = 'Decrypt File';
+                    fileInput.setAttribute('accept', '.enc');
+                }
+            }
+
+            encryptModeBtn.addEventListener('click', () => setMode('encrypt'));
+            decryptModeBtn.addEventListener('click', () => setMode('decrypt'));
+
+            // Drag and drop handlers
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                uploadArea.addEventListener(eventName, preventDefaults, false);
+            });
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            ['dragenter', 'dragover'].forEach(eventName => {
+                uploadArea.addEventListener(eventName, () => {
+                    uploadArea.style.borderColor = '#3b82f6';
+                    uploadArea.style.backgroundColor = '#eff6ff';
+                }, false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                uploadArea.addEventListener(eventName, () => {
+                    uploadArea.style.borderColor = '';
+                    uploadArea.style.backgroundColor = '';
+                }, false);
+            });
+
+            uploadArea.addEventListener('drop', (e) => {
+                if (e.dataTransfer.files.length > 0) {
+                    handleFileSelect(e.dataTransfer.files[0]);
+                }
+            });
+
+            uploadArea.addEventListener('click', () => {
+                fileInput.click();
+            });
+
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    handleFileSelect(e.target.files[0]);
+                }
+            });
+
+            function handleFileSelect(file) {
+                selectedFile = file;
+                uploadTitle.textContent = file.name;
+                uploadInfo.textContent = `Size: ${(file.size / (1024 * 1024)).toFixed(2)} MB`;
+                passwordSection.style.display = 'block';
+                convertBtn.style.display = 'flex';
+                resultsSection.style.display = 'none';
+                progressSection.style.display = 'none';
+            }
+
+            resetBtn.addEventListener('click', () => {
+                selectedFile = null;
+                fileInput.value = '';
+                encryptionKey.value = '';
+                setMode(currentMode); // Reset UI to current mode
+                passwordSection.style.display = 'none';
+                convertBtn.style.display = 'none';
+                resultsSection.style.display = 'none';
+                progressSection.style.display = 'none';
+            });
+
+            convertBtn.addEventListener('click', async () => {
+                if (!selectedFile) return alert('Please select a file first.');
+
+                const password = encryptionKey.value;
+                if (!password) return alert('Please enter a password.');
+
+                progressSection.style.display = 'block';
+                convertBtn.style.display = 'none';
+                progressFill.style.width = '10%';
+                progressText.textContent = 'Reading file securely...';
+
+                try {
+                    // 1. Read file as ArrayBuffer
+                    const arrayBuffer = await selectedFile.arrayBuffer();
+                    progressFill.style.width = '30%';
+
+                    // 2. Setup Password Key
+                    const encoder = new TextEncoder();
+                    const passwordKey = await crypto.subtle.importKey(
+                        'raw',
+                        encoder.encode(password),
+                        { name: 'PBKDF2' },
+                        false,
+                        ['deriveKey']
+                    );
+
+                    if (currentMode === 'encrypt') {
+                        progressText.textContent = 'Generating strong encryption keys...';
+
+                        const salt = crypto.getRandomValues(new Uint8Array(16));
+                        const iv = crypto.getRandomValues(new Uint8Array(12));
+
+                        const key = await crypto.subtle.deriveKey(
+                            { name: 'PBKDF2', salt: salt, iterations: 100000, hash: 'SHA-256' },
+                            passwordKey, { name: 'AES-GCM', length: 256 }, false, ['encrypt']
+                        );
+
+                        progressFill.style.width = '60%';
+                        progressText.textContent = 'Encrypting data (AES-256-GCM)...';
+
+                        const encryptedData = await crypto.subtle.encrypt(
+                            { name: 'AES-GCM', iv: iv }, key, arrayBuffer
+                        );
+
+                        progressFill.style.width = '90%';
+                        progressText.textContent = 'Preparing encrypted file...';
+
+                        const combinedBuffer = new Uint8Array(salt.length + iv.length + encryptedData.byteLength);
+                        combinedBuffer.set(salt, 0);
+                        combinedBuffer.set(iv, salt.length);
+                        combinedBuffer.set(new Uint8Array(encryptedData), salt.length + iv.length);
+
+                        const blob = new Blob([combinedBuffer], { type: 'application/octet-stream' });
+                        const url = URL.createObjectURL(blob);
+                        const outName = `${selectedFile.name}.enc`;
+
+                        showResults(url, outName, 'Encryption Complete!');
+                    } else {
+                        // Decryption Logic
+                        progressText.textContent = 'Reading encryption keys...';
+
+                        if (arrayBuffer.byteLength < 28) throw new Error("File is too small to be a valid .enc file");
+
+                        const salt = new Uint8Array(arrayBuffer, 0, 16);
+                        const iv = new Uint8Array(arrayBuffer, 16, 12);
+                        const encryptedData = new Uint8Array(arrayBuffer, 28);
+
+                        const key = await crypto.subtle.deriveKey(
+                            { name: 'PBKDF2', salt: salt, iterations: 100000, hash: 'SHA-256' },
+                            passwordKey, { name: 'AES-GCM', length: 256 }, false, ['decrypt']
+                        );
+
+                        progressFill.style.width = '60%';
+                        progressText.textContent = 'Decrypting data (AES-256-GCM)...';
+
+                        const decryptedData = await crypto.subtle.decrypt(
+                            { name: 'AES-GCM', iv: iv }, key, encryptedData
+                        );
+
+                        progressFill.style.width = '90%';
+                        progressText.textContent = 'Preparing decrypted file...';
+
+                        const blob = new Blob([decryptedData], { type: 'application/octet-stream' });
+                        const url = URL.createObjectURL(blob);
+
+                        let outName = selectedFile.name;
+                        if (outName.toLowerCase().endsWith('.enc')) {
+                            outName = outName.substring(0, outName.length - 4);
+                        } else {
+                            outName = 'decrypted_' + outName;
+                        }
+
+                        showResults(url, outName, 'Decryption Complete!');
+                    }
+
+                } catch (error) {
+                    console.error('Operation error:', error);
+                    let errMsg = 'Operation failed. ';
+                    if (currentMode === 'decrypt') errMsg += 'The password might be incorrect or the file is corrupted.';
+                    else errMsg += 'The file might be too large for browser memory limits.';
+                    alert(errMsg);
+                    convertBtn.style.display = 'flex';
+                    progressSection.style.display = 'none';
+                }
+            });
+
+            function showResults(url, outName, titleMsg) {
+                progressFill.style.width = '100%';
+                progressText.textContent = 'Success!';
+
+                setTimeout(() => {
+                    progressSection.style.display = 'none';
+                    resultsSection.style.display = 'block';
+                    resultTitle.textContent = titleMsg;
+                    resultFileName.textContent = outName;
+                    downloadLink.href = url;
+                    downloadLink.download = outName;
+                    downloadLink.textContent = `Download ${currentMode === 'encrypt' ? '.ENC' : 'Decrypted'} File`;
+                    resetBtn.textContent = `${currentMode === 'encrypt' ? 'Encrypt' : 'Decrypt'} Another File`;
+                }, 500);
+            }
+        });
+    </script>
+</body>
+
+</html>
