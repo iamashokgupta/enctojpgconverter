@@ -82,6 +82,14 @@
         },
         {
           "@type": "Question",
+          "name": "How do I open .enc files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To open .enc files, you need to decrypt them first. Our converter automatically detects the encryption type and converts the file to PNG format, making it viewable on any device including iPhone and Android."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "How do I convert an enc file to png?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -90,10 +98,34 @@
         },
         {
           "@type": "Question",
+          "name": "Can I convert WhatsApp backup ENC files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Our tool supports ENC files from WhatsApp backups. Simply upload the .enc file and if it's encrypted with a password, enter it when prompted."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I lose image quality when converting ENC to PNG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No! We preserve 100% of the original image quality during conversion. There's no compression or quality loss in the ENC to PNG conversion process. All images are extracted without losing any quality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I batch convert multiple ENC files at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Our batch image processing feature allows you to convert multiple ENC files to PNG simultaneously. Just drag and drop all your files at once and they'll all be processed together."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Is this enc to png converter secure?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, it is completely secure. Your files are processed securely directly in your browser, meaning they never leave your device and no data is uploaded to our servers."
+            "text": "Yes, it is completely secure. Your files are processed securely directly in your browser, meaning they never leave your device and no data is uploaded to our servers. Files are automatically processed without external transfers."
           }
         }
       ]
@@ -165,11 +197,11 @@
                 <h2 class="sr-only" style="display: none;">Convert Your .enc File to PNG Instantly</h2>
                 <!-- Mode Switcher -->
                 <div class="mode-switcher">
-                    <button class="mode-btn active" data-mode="enc-to-jpg" id="encToPngBtn">
+                    <button class="mode-btn active" data-mode="enc-to-png" id="encToPngBtn">
                         <span>🔓</span> ENC to PNG
                     </button>
-                    <button class="mode-btn" data-mode="jpg-to-enc" id="pngToEncBtn">
-                        <span>🔒</span> JPG to ENC
+                    <button class="mode-btn" data-mode="png-to-enc" id="pngToEncBtn">
+                        <span>🔒</span> PNG to ENC
                     </button>
                 </div>
 
@@ -201,7 +233,7 @@
                 <div class="password-section" id="passwordSection" style="display: none;">
                     <label for="encryptionKey" id="passwordLabel">Encryption Key/Password (if required):</label>
                     <input type="password" id="encryptionKey" placeholder="Enter password">
-                    <p class="password-hint">💡 For JPG to ENC: Enter a password to encrypt your images</p>
+                    <p class="password-hint">💡 For PNG to ENC: Enter a password to encrypt your images</p>
                 </div>
 
                 <!-- File List -->
@@ -254,7 +286,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">📦</div>
                     <h3>Batch Processing</h3>
-                    <p>Convert multiple ENC files to JPG simultaneously with our batch conversion tool.</p>
+                    <p>Convert multiple ENC files to PNG simultaneously with our batch conversion tool.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📱</div>
@@ -334,7 +366,7 @@
                 </div>
                 <div class="faq-item">
                     <h3>Can I batch convert multiple ENC files at once?</h3>
-                    <p>Yes! Our batch image processing feature allows you to convert multiple ENC files to JPG
+                    <p>Yes! Our batch image processing feature allows you to convert multiple ENC files to PNG
                         simultaneously.
                         Just drag and drop all your files at once and they'll all be processed together.</p>
                 </div>
