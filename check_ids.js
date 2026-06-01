@@ -1,6 +1,6 @@
 const fs = require('fs');
-const js = fs.readFileSync('enc-to-image-converter/script.js', 'utf8');
-const html = fs.readFileSync('enc-to-image-converter/index.html', 'utf8');
+const js = fs.readFileSync('script.js', 'utf8');
+const html = fs.readFileSync('index.html', 'utf8');
 const regex = /getElementById\(['"]([^'"]+)['"]\)/g;
 let match;
 while ((match = regex.exec(js)) !== null) {
