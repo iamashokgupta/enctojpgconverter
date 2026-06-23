@@ -8,7 +8,8 @@
     <!-- Primary Meta Tags -->
     <title>Contact Us - ENC to JPG Converter</title>
     <meta name="title" content="Contact Us - ENC to JPG Converter">
-    <meta name="description" content="Contact support for ENC to JPG Converter. Help with your .enc file conversions.">
+    <meta name="description"
+        content="Contact the ENC to JPG Converter team. Get help with .enc file conversions, report issues, or share feedback.">
     <meta name="robots" content="index, follow">
 
     <!-- Canonical URL -->
@@ -32,7 +33,7 @@
       "@context": "https://schema.org",
       "@type": "ContactPage",
       "name": "Contact Us",
-      "description": "Contact support for ENC to JPG Converter. Help with your .enc file conversions.",
+      "description": "Contact the ENC to JPG Converter team. Get help with .enc file conversions, report issues, or share feedback.",
       "url": "https://enctojpgconverter.online/contact-us.html",
       "breadcrumb": {
         "@type": "BreadcrumbList",
@@ -57,9 +58,9 @@
         "logo": "https://enctojpgconverter.online/favicon.png",
         "contactPoint": {
           "@type": "ContactPoint",
-          "email": "support@enctojpgconverter.online",
+          "email": "enctojpgconverter@gmail.com",
           "contactType": "Customer Support",
-          "availableLanguage": ["English"]
+          "availableLanguage": ["English", "Hindi"]
         }
       }
     }
@@ -70,7 +71,7 @@
 
     <style>
         .contact-content {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
             padding: var(--spacing-2xl) var(--spacing-md);
         }
@@ -95,7 +96,7 @@
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: var(--spacing-xl);
             margin-bottom: var(--spacing-2xl);
         }
@@ -154,6 +155,7 @@
             color: var(--accent-purple);
         }
 
+        /* Email form that uses mailto: */
         .form-section {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -165,11 +167,18 @@
 
         .form-section h2 {
             font-size: 1.75rem;
-            margin-bottom: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
             background: var(--primary-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .form-section .form-note {
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.6;
         }
 
         .form-group {
@@ -195,6 +204,7 @@
             font-size: 1rem;
             font-family: inherit;
             transition: all var(--transition-fast);
+            box-sizing: border-box;
         }
 
         .form-group input:focus,
@@ -242,6 +252,7 @@
             transform: translateY(0);
         }
 
+        /* FAQ Section */
         .faq-section {
             margin-top: var(--spacing-2xl);
         }
@@ -285,22 +296,6 @@
             font-size: 0.9375rem;
         }
 
-        .success-message {
-            display: none;
-            background: rgba(34, 197, 94, 0.1);
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-md);
-            margin-bottom: var(--spacing-md);
-            color: #4ADE80;
-            text-align: center;
-        }
-
-        .success-message.show {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -313,56 +308,9 @@
             }
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        .contact-card:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .contact-card:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .contact-card:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-lg);
-        }
-
-        .social-link {
-            width: 48px;
-            height: 48px;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: all var(--transition-normal);
-            font-size: 1.25rem;
-        }
-
-        .social-link:hover {
-            background: var(--primary-gradient);
-            border-color: transparent;
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
+        .contact-card:nth-child(1) { animation-delay: 0.1s; }
+        .contact-card:nth-child(2) { animation-delay: 0.2s; }
+        .contact-card:nth-child(3) { animation-delay: 0.3s; }
     </style>
 </head>
 
@@ -401,51 +349,105 @@
     <div class="contact-content">
         <div class="contact-header">
             <h1>Contact Us</h1>
-            <p>Have questions or need support? Fill out the form below and we'll get back to you as soon as possible.
-            </p>
-            <div
-                style="margin-top: var(--spacing-md); padding: var(--spacing-md); background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-md); backdrop-filter: blur(10px);">
-                <p style="color: var(--text-primary); margin: 0;">
-                    📧 Email us directly at:
-                    <a href="mailto:support@enctojpgconverter.online"
-                        style="color: var(--accent-blue); text-decoration: none; font-weight: 600; white-space: nowrap; font-size: 0.9rem;">
-                        support@enctojpgconverter.online
-                    </a>
-                </p>
+            <p>Have a question, found a bug, or need help with a conversion? We are here to help. Choose how you would
+                like to reach us.</p>
+        </div>
+
+        <!-- Contact Cards -->
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email Support</h3>
+                <p>Send us an email and we will respond within 24–48 hours.</p>
+                <a href="mailto:enctojpgconverter@gmail.com" class="contact-link">
+                    enctojpgconverter@gmail.com →
+                </a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">🐛</div>
+                <h3>Report a Bug</h3>
+                <p>Found an issue with one of our tools? Let us know so we can fix it quickly.</p>
+                <a href="mailto:enctojpgconverter@gmail.com?subject=Bug%20Report%20-%20ENC%20to%20JPG%20Converter"
+                    class="contact-link">
+                    Report a Bug →
+                </a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">💡</div>
+                <h3>Feature Request</h3>
+                <p>Have an idea for a new feature or improvement? We love hearing from users.</p>
+                <a href="mailto:enctojpgconverter@gmail.com?subject=Feature%20Request%20-%20ENC%20to%20JPG%20Converter"
+                    class="contact-link">
+                    Send Suggestion →
+                </a>
             </div>
         </div>
 
-        <!-- Contact Form -->
+        <!-- Quick Contact Form (opens mailto:) -->
         <div class="form-section">
             <h2>Send Us a Message</h2>
-            <div id="successMessage" class="success-message">
-                ✓ Thank you for your message! We'll get back to you soon.
-            </div>
+            <p class="form-note">Fill in the form below and click "Send Message" to open your default email app with the
+                details pre-filled. This ensures your message is sent directly from your own email address.</p>
             <form id="contactForm">
                 <div class="form-group">
-                    <label for="name">Name <span class="form-required">*</span></label>
+                    <label for="name">Your Name <span class="form-required">*</span></label>
                     <input type="text" id="name" name="name" placeholder="Your full name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email <span class="form-required">*</span></label>
-                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    <label for="subject">Subject <span class="form-required">*</span></label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a topic...</option>
+                        <option value="General Question">General Question</option>
+                        <option value="Bug Report">Bug Report</option>
+                        <option value="Feature Request">Feature Request</option>
+                        <option value="Conversion Issue">Conversion Issue</option>
+                        <option value="Privacy Concern">Privacy Concern</option>
+                        <option value="DMCA / Copyright">DMCA / Copyright Inquiry</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Message <span class="form-required">*</span></label>
                     <textarea id="message" name="message"
-                        placeholder="Please describe your question or issue in detail..." required></textarea>
+                        placeholder="Please describe your question, issue, or suggestion in detail..." required></textarea>
                 </div>
 
-                <button type="submit" class="submit-btn">
-                    <span>Send Message</span>
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span>Send Message via Email</span>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </button>
             </form>
+        </div>
+
+        <!-- Common Questions -->
+        <div class="faq-section">
+            <h2>Common Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h3>My .enc file won't convert. What should I do?</h3>
+                    <p>Not all .enc files contain images. Some may be encrypted data files. Try our <a
+                            href="enc-file-viewer/" style="color: var(--accent-blue); text-decoration: none;">ENC File
+                            Viewer</a> to inspect the contents first. If you need help, email us with details about where
+                        the file came from.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>Is my data safe when using the converter?</h3>
+                    <p>Absolutely. All processing happens locally in your browser. Your files are never uploaded to any
+                        server. Read our <a href="privacy-and-policy.html"
+                            style="color: var(--accent-blue); text-decoration: none;">Privacy Policy</a> for full
+                        details.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>How quickly do you respond to emails?</h3>
+                    <p>We typically respond within 24–48 hours on business days. For urgent issues, please include
+                        "URGENT" in your subject line and describe the problem in detail.</p>
+                </div>
+            </div>
         </div>
 
         <!-- Back to Home Button -->
@@ -487,6 +489,7 @@
                         <li><a href="index.html#features">Features</a></li>
                         <li><a href="index.html#how-it-works">How It Works</a></li>
                         <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="enc-to-allfile-converter.html">Universal Converter</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -506,36 +509,30 @@
         </div>
     </footer>
 
-    <!-- Contact Form Script -->
+    <!-- Contact Form Script — uses mailto: instead of a fake backend -->
     <script>
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
+            const name = document.getElementById('name').value.trim();
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value.trim();
 
-            // In a real implementation, you would send this to a backend service
-            // For now, we'll just show a success message
-            console.log('Form submitted:', formData);
+            if (!name || !subject || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
 
-            // Show success message
-            const successMessage = document.getElementById('successMessage');
-            successMessage.classList.add('show');
+            // Build the mailto: link with pre-filled data
+            const emailTo = 'enctojpgconverter@gmail.com';
+            const emailSubject = encodeURIComponent(subject + ' - ENC to JPG Converter');
+            const emailBody = encodeURIComponent(
+                'Name: ' + name + '\n\n' +
+                'Message:\n' + message + '\n\n' +
+                '---\nSent from the Contact Us page at enctojpgconverter.online'
+            );
 
-            // Reset form
-            this.reset();
-
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.classList.remove('show');
-            }, 5000);
-
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            window.location.href = 'mailto:' + emailTo + '?subject=' + emailSubject + '&body=' + emailBody;
         });
     </script>
 </body>

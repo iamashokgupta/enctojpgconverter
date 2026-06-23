@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary Meta Tags -->
-    <title>About Us - ENC to JPG Converter</title>
-    <meta name="title" content="About Us - ENC to JPG Converter">
-    <meta name="description" content="Learn about Ashok Gupta and the story behind EncToJPG Converter.">
+    <title>About Us - ENC to JPG Converter | Our Mission & Story</title>
+    <meta name="title" content="About Us - ENC to JPG Converter | Our Mission & Story">
+    <meta name="description"
+        content="Learn about the team behind ENC to JPG Converter. Built by Ashok Gupta, a Full Stack Developer, to solve the common problem of opening encrypted .enc image files.">
     <meta name="robots" content="index, follow">
 
     <!-- Canonical URL -->
@@ -31,8 +32,8 @@
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
-      "name": "About Us",
-      "description": "Learn about Ashok Gupta and the story behind EncToJPG Converter.",
+      "name": "About Us - ENC to JPG Converter",
+      "description": "Learn about the team behind ENC to JPG Converter. Built by Ashok Gupta to solve the common problem of opening encrypted .enc image files.",
       "url": "https://enctojpgconverter.online/about-us.html",
       "breadcrumb": {
         "@type": "BreadcrumbList",
@@ -64,7 +65,7 @@
 
     <style>
         .about-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: var(--spacing-2xl) var(--spacing-md);
         }
@@ -83,6 +84,14 @@
             background-clip: text;
         }
 
+        .about-header p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
         .about-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -92,6 +101,7 @@
             animation: fadeInUp 0.6s ease backwards;
             position: relative;
             overflow: hidden;
+            margin-bottom: var(--spacing-lg);
         }
 
         .about-card::before {
@@ -104,18 +114,35 @@
             background: var(--primary-gradient);
         }
 
-
-        .story-section h3 {
+        .about-card h2 {
             font-size: 1.5rem;
             margin-bottom: var(--spacing-md);
             color: var(--text-primary);
         }
 
-        .story-section p {
+        .about-card h3 {
+            font-size: 1.25rem;
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+
+        .about-card p {
             color: var(--text-secondary);
-            font-size: 1.125rem;
-            line-height: 1.8;
+            font-size: 1.0625rem;
+            line-height: 1.85;
             margin-bottom: var(--spacing-md);
+        }
+
+        .about-card ul {
+            margin-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .about-card li {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-xs);
         }
 
         .highlight-box {
@@ -123,13 +150,66 @@
             border: 1px solid rgba(99, 102, 241, 0.3);
             border-radius: var(--radius-md);
             padding: var(--spacing-lg);
-            margin-top: var(--spacing-xl);
+            margin: var(--spacing-lg) 0;
         }
 
         .highlight-box p {
             margin: 0;
             color: var(--text-primary);
             font-weight: 500;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .value-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+
+        .value-item:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-4px);
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .value-item h4 {
+            font-size: 1.125rem;
+            margin-bottom: var(--spacing-xs);
+            color: var(--text-primary);
+        }
+
+        .value-item p {
+            font-size: 0.9375rem;
+            margin: 0;
+        }
+
+        .about-card:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .about-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .about-card:nth-child(4) {
+            animation-delay: 0.45s;
+        }
+
+        .about-card:nth-child(5) {
+            animation-delay: 0.6s;
         }
 
         @keyframes fadeInUp {
@@ -180,20 +260,138 @@
     <!-- About Content -->
     <div class="about-content">
         <div class="about-header">
-            <h1>About Us</h1>
+            <h1>About ENC to JPG Converter</h1>
+            <p>A free, privacy-first tool built to solve the universal frustration of opening encrypted .enc image
+                files — directly in your browser, with no uploads required.</p>
         </div>
 
+        <!-- Our Story -->
         <div class="about-card">
-            <div class="story-section">
-                <p>Hi, I am Ashok Gupta, a Full Stack Developer with a passion for solving real-world digital problems.</p>
-                
-                <p><strong>The Story Behind EncToJPG Converter</strong><br>
-                I discovered a common frustration among users: when downloading a profile picture from WhatsApp Web, it often saves with an <strong>.enc</strong> extension. These encoded files are not viewable by standard image viewers, leaving many users confused about how to access their images.</p>
-                
-                <p>Leveraging my deep expertise in file handling and conversion algorithms, I decided to create a solution. I built EncToJPG as a specialized tool that instantly converts these tricky .enc files into standard JPG, JPEG, or PNG formats.</p>
+            <h2>Our Story</h2>
+            <p>Hi, I am <strong>Ashok Gupta</strong>, a Full Stack Developer with a passion for solving real-world
+                digital problems. I created ENC to JPG Converter after experiencing a common frustration firsthand.</p>
 
-                <p><strong>The best part?</strong> The entire conversion process runs securely in your browser. No files are uploaded to any server, ensuring your privacy is my top priority.</p>
+            <p>When you download a profile picture from <strong>WhatsApp Web</strong>, it often saves with an
+                <strong>.enc</strong> extension. These encoded files cannot be opened by standard image viewers on
+                Windows, macOS, iPhone, or Android, leaving users confused and unable to access their own images.
+            </p>
+
+            <p>After searching the internet and finding no simple, free solution, I decided to build one myself. Using
+                my expertise in JavaScript, the Web Crypto API, and the HTML5 Canvas API, I developed a tool that
+                converts these tricky .enc files into standard JPG, JPEG, or PNG formats — all within the browser.</p>
+
+            <div class="highlight-box">
+                <p>🔒 <strong>Privacy by Design:</strong> The entire conversion process runs securely inside your web
+                    browser using client-side JavaScript. No files are ever uploaded to any server. Your images stay on
+                    your device at all times.</p>
             </div>
+        </div>
+
+        <!-- What We Do -->
+        <div class="about-card">
+            <h2>What We Do</h2>
+            <p>ENC to JPG Converter is a specialized suite of free online tools for handling encrypted .enc files. Our
+                tools are designed for everyday users who need a quick, reliable way to open and convert these files
+                without installing any software.</p>
+
+            <h3>Our Converter Tools</h3>
+            <ul>
+                <li><strong><a href="index.html" style="color: var(--accent-blue); text-decoration: none;">ENC to JPG
+                            Converter</a></strong> — Convert encrypted .enc files to standard JPG images.</li>
+                <li><strong><a href="enc-to-jpeg-converter/"
+                            style="color: var(--accent-blue); text-decoration: none;">ENC to JPEG Converter</a></strong>
+                    — Convert .enc files to JPEG format for maximum compatibility.</li>
+                <li><strong><a href="enc-to-png-converter/"
+                            style="color: var(--accent-blue); text-decoration: none;">ENC to PNG Converter</a></strong>
+                    — Convert .enc files to lossless PNG format for higher quality.</li>
+                <li><strong><a href="enc-to-pdf-converter/"
+                            style="color: var(--accent-blue); text-decoration: none;">ENC to PDF Converter</a></strong>
+                    — Convert .enc files and S-63 maritime charts to PDF documents.</li>
+                <li><strong><a href="enc-file-viewer/" style="color: var(--accent-blue); text-decoration: none;">ENC
+                            File Viewer</a></strong> — Open and inspect the raw contents of .enc files.</li>
+                <li><strong><a href="enc-to-allfile-converter.html"
+                            style="color: var(--accent-blue); text-decoration: none;">Universal ENC Converter</a></strong>
+                    — A versatile tool to encrypt or decrypt any file format.</li>
+            </ul>
+
+            <h3>Supported ENC File Sources</h3>
+            <p>Our tools can process .enc files from a variety of sources, including:</p>
+            <ul>
+                <li><strong>WhatsApp Backups:</strong> Profile pictures and media saved from WhatsApp Web.</li>
+                <li><strong>S-63 Maritime Charts:</strong> International Hydrographic Organization encrypted nautical
+                    charts.</li>
+                <li><strong>CopySafe Protected Media:</strong> Images protected with CopySafe encryption.</li>
+                <li><strong>Generic Encryption Software:</strong> Files encrypted with standard symmetric-key algorithms.
+                </li>
+            </ul>
+        </div>
+
+        <!-- How It Works Technically -->
+        <div class="about-card">
+            <h2>How Our Technology Works</h2>
+            <p>Unlike traditional file conversion websites that require you to upload files to a remote server, our tool
+                operates entirely within your web browser. Here is a step-by-step breakdown of the process:</p>
+
+            <h3>Step 1: File Selection</h3>
+            <p>When you select or drag-and-drop an .enc file, the browser reads the file into its local memory (RAM)
+                using the <strong>File API</strong>. The file data never leaves your device at this stage or at any other
+                stage.</p>
+
+            <h3>Step 2: Detection & Decryption</h3>
+            <p>Our JavaScript code analyzes the file's binary header to identify the encryption format. Depending on the
+                format, the tool uses the browser's built-in <strong>Web Crypto API</strong> or custom decryption
+                algorithms to process the file locally.</p>
+
+            <h3>Step 3: Image Rendering & Download</h3>
+            <p>The decrypted image data is rendered using the <strong>HTML5 Canvas API</strong> and converted to your
+                chosen output format (JPG, PNG, or PDF). You can then preview and download the resulting file. All
+                temporary data is cleared from memory when you close or refresh the browser tab.</p>
+
+            <div class="highlight-box">
+                <p>💡 <strong>No server, no database, no cloud storage.</strong> Our website serves static HTML, CSS, and
+                    JavaScript files. The conversion logic executes entirely on your device's processor.</p>
+            </div>
+        </div>
+
+        <!-- Our Values -->
+        <div class="about-card">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">🔐</div>
+                    <h4>Privacy First</h4>
+                    <p>Your files are processed locally in your browser. We never see, store, or transmit your data.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🎯</div>
+                    <h4>Simplicity</h4>
+                    <p>One click is all it takes. No account registration, no software installation, no complex
+                        settings.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💰</div>
+                    <h4>Free Forever</h4>
+                    <p>All our tools are free to use with no hidden fees. We sustain the site through non-intrusive
+                        advertising.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🌍</div>
+                    <h4>Accessibility</h4>
+                    <p>Works on any modern browser — Chrome, Firefox, Safari, Edge — on desktop, iPhone, and Android.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="about-card">
+            <h2>Get in Touch</h2>
+            <p>Have a question, suggestion, or issue with one of our tools? We would love to hear from you.</p>
+            <p><strong>Email:</strong> <a href="mailto:enctojpgconverter@gmail.com"
+                    style="color: var(--accent-blue); text-decoration: none;">enctojpgconverter@gmail.com</a></p>
+            <p>You can also visit our <a href="contact-us.html"
+                    style="color: var(--accent-blue); text-decoration: none;">Contact Us</a> page for more ways to reach
+                us.</p>
         </div>
 
         <!-- Back to Home Button -->
@@ -235,6 +433,7 @@
                         <li><a href="index.html#features">Features</a></li>
                         <li><a href="index.html#how-it-works">How It Works</a></li>
                         <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="enc-to-allfile-converter.html">Universal Converter</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
