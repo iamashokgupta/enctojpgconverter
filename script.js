@@ -223,8 +223,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 let outputName;
 
                 if (currentMode === 'enc-to-jpg') {
-                    convertedData = await convertEncToJpg(file, password);
-                    outputName = file.name.replace('.enc', '.jpg');
+                    const formatSelect = document.getElementById('outputFormat');
+                    const outputMimeType = formatSelect ? formatSelect.value : 'image/jpeg';
+                    const ext = outputMimeType === 'image/png' ? '.png' : (outputMimeType === 'image/jpeg' ? '.jpg' : '.jpg');
+                    
+                    convertedData = await convertEncToJpg(file, password, outputMimeType);
+                    outputName = file.name.replace('.enc', ext);
                 } else {
                     convertedData = await convertJpgToEnc(file, password);
                     outputName = file.name.replace(/\.(jpg|jpeg|jpe|jfif)$/i, '.enc');
@@ -254,8 +258,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 500);
     }
 
-    // ENC to JPG Conversion
-    async function convertEncToJpg(file, password = '') {
+    // ENC to JPG/PNG Conversion
+    async function convertEncToJpg(file, password = '', outputMimeType = 'image/jpeg') {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
 
@@ -267,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     let decryptedData = await attemptDecryption(arrayBuffer, password, file.name);
 
                     // Convert to image
-                    const blob = new Blob([decryptedData], { type: 'image/jpeg' });
+                    const blob = new Blob([decryptedData], { type: outputMimeType });
                     const imageUrl = URL.createObjectURL(blob);
 
                     // Verify it's a valid image
@@ -280,10 +284,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         const ctx = canvas.getContext('2d');
                         ctx.drawImage(img, 0, 0);
 
-                        // Convert to JPG with high quality
+                        // Convert to requested format with high quality
+                        const quality = outputMimeType === 'image/jpeg' ? 0.95 : undefined;
                         canvas.toBlob((blob) => {
                             resolve(blob);
-                        }, 'image/jpeg', 0.95);
+                        }, outputMimeType, quality);
                     };
 
                     img.onerror = () => {
