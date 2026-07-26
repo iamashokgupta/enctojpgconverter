@@ -227,8 +227,22 @@ document.addEventListener('DOMContentLoaded', function () {
                     const outputMimeType = formatSelect ? formatSelect.value : 'image/jpeg';
                     const ext = outputMimeType === 'image/png' ? '.png' : (outputMimeType === 'image/jpeg' ? '.jpg' : '.jpg');
                     
-                    convertedData = await convertEncToJpg(file, password, outputMimeType);
-                    outputName = file.name.replace('.enc', ext);
+                    if (file.name.toLowerCase().match(/\.(heic|heif)$/)) {
+                        if (typeof heic2any !== 'undefined') {
+                            const convertedBlob = await heic2any({
+                                blob: file,
+                                toType: outputMimeType,
+                                quality: outputMimeType === 'image/jpeg' ? 0.95 : undefined
+                            });
+                            convertedData = Array.isArray(convertedBlob) ? convertedBlob[0] : convertedBlob;
+                            outputName = file.name.replace(/\.(heic|heif)$/i, ext);
+                        } else {
+                            throw new Error("HEIC conversion library is not loaded.");
+                        }
+                    } else {
+                        convertedData = await convertEncToJpg(file, password, outputMimeType);
+                        outputName = file.name.replace(/\.(enc|jfif|webp|avif|heic|heif|png|jpeg|jpg)$/i, ext);
+                    }
                 } else {
                     convertedData = await convertJpgToEnc(file, password);
                     outputName = file.name.replace(/\.(jpg|jpeg|jpe|jfif)$/i, '.enc');
