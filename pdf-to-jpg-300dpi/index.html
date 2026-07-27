@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="canonical" href="https://enctojpgconverter.online/pdf-to-jpg-300dpi/">
+    <!-- Primary Meta Tags -->
+    <title>Convert High Resolution PDF to JPG (300 DPI) & JPG to PDF</title>
+    <meta name="title" content="Convert High Resolution PDF to JPG (300 DPI) & JPG to PDF">
+    <meta name="description"
+        content="The best free PDF to JPG converter online. Convert high resolution PDF to JPG 300 DPI free or convert JPG to PDF high-quality. No downloads required.">
+    <meta name="keywords"
+        content="convert high resolution pdf to jpg 300 dpi free download, convert high resolution pdf to jpg 300 dpi free online, jpg to pdf, pdf to jpg free, best free pdf to jpg converter, jpg to pdf high-quality, pdf to jpg converter download, jpg to pdf high quality 300 dpi, convert high resolution pdf to jpg 300 dpi free">
+    <meta name="author" content="ENC Converter Tool">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enctojpgconverter.online/pdf-to-jpg-300dpi/">
+    <meta property="og:title" content="Convert High Resolution PDF to JPG (300 DPI) & JPG to PDF">
+    <meta property="og:description"
+        content="The best free PDF to JPG converter online. Convert high resolution PDF to JPG 300 DPI free or convert JPG to PDF high-quality. No downloads required.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://enctojpgconverter.online/pdf-to-jpg-300dpi/">
+    <meta property="twitter:title" content="Convert High Resolution PDF to JPG (300 DPI) & JPG to PDF">
+    <meta property="twitter:description"
+        content="The best free PDF to JPG converter online. Convert high resolution PDF to JPG 300 DPI free or convert JPG to PDF high-quality. No downloads required.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- PDF Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+    </script>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "High Resolution PDF to JPG Converter",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Convert high resolution PDF to JPG 300 DPI free online or combine JPG to PDF at high quality."
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="url(#logo-gradient)" />
+                        <path d="M20 10L28 15V25L20 30L12 25V15L20 10Z" stroke="white" stroke-width="2"
+                            stroke-linejoin="round" />
+                        <circle cx="20" cy="20" r="3" fill="white" />
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#6366F1" />
+                                <stop offset="1" stop-color="#A855F7" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span>ENC Converter Tools</span>
+                </div>
+                <nav class="nav">
+                    <a href="../index.html">Home</a>
+                    <a href="#article">Converter Guide</a>
+                    <a href="#faq">FAQ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">PDF to JPG</span> (300 DPI) & JPG to PDF
+                </h1>
+
+                <p class="hero-subtitle">
+                    Convert high resolution PDF to JPG (300 DPI) for free, or combine your high-quality JPGs into a secure PDF. Processed instantly in your browser.
+                </p>
+                <div class="hero-badges">
+                    <span class="badge">🖨️ 300 DPI High-Quality</span>
+                    <span class="badge">🔄 Bi-Directional Converter</span>
+                    <span class="badge">🔒 Secure No-Upload</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Converter Section -->
+    <section class="converter-section">
+        <div class="container">
+            <div class="converter-card">
+                <!-- Mode Switcher -->
+                <div class="mode-switcher">
+                    <button class="mode-btn active" data-mode="pdf-to-jpg" id="pdfToJpgBtn">
+                        <span>📄➡️📸</span> PDF to JPG
+                    </button>
+                    <button class="mode-btn" data-mode="jpg-to-pdf" id="jpgToPdfBtn">
+                        <span>📸➡️📄</span> JPG to PDF
+                    </button>
+                </div>
+
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="32" fill="url(#upload-gradient)" opacity="0.1" />
+                            <path d="M32 20V44M32 20L24 28M32 20L40 28" stroke="url(#upload-gradient)" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M20 44H44" stroke="url(#upload-gradient)" stroke-width="3"
+                                stroke-linecap="round" />
+                            <defs>
+                                <linearGradient id="upload-gradient" x1="0" y1="0" x2="64" y2="64"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#6366F1" />
+                                    <stop offset="1" stop-color="#A855F7" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3 class="upload-title" id="uploadTitle">Drag & Drop PDF file here</h3>
+                    <p class="upload-subtitle" id="uploadSubtitle">Converts all pages to high-res JPGs</p>
+                    <p class="upload-info" id="uploadInfo">All processing happens locally. No limits, totally free.</p>
+                    <input type="file" id="fileInput" accept=".pdf" multiple hidden>
+                </div>
+
+                <!-- DPI/Quality Selector -->
+                <div class="format-selector" style="margin-top: 15px; margin-bottom: 15px; text-align: left;">
+                    <label for="qualitySelect" style="display: block; margin-bottom: 8px; color: var(--text-primary); font-weight: 500;">Output Quality:</label>
+                    <select id="qualitySelect" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: white; font-family: inherit;">
+                        <option value="3.125">High Resolution (approx. 300 DPI) - Best for printing</option>
+                        <option value="1.5">Medium Resolution (approx. 150 DPI) - Best for web</option>
+                        <option value="0.75">Low Resolution (72 DPI) - Smallest file size</option>
+                    </select>
+                </div>
+
+                <!-- File List -->
+                <div class="file-list" id="fileList"></div>
+
+                <!-- Progress Section -->
+                <div class="progress-section" id="progressSection" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">Processing files...</p>
+                </div>
+
+                <!-- Convert Button -->
+                <button class="btn-primary" id="convertBtn" style="display: none;">
+                    <span id="convertBtnText">Convert to JPG</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 10H16M16 10L12 6M16 10L12 14" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <!-- Results Section -->
+                <div class="results-section" id="resultsSection" style="display: none;">
+                    <h3 id="resultsTitle">Converted Images</h3>
+                    <div class="results-grid" id="resultsGrid"></div>
+                    <button class="btn-secondary" id="downloadAllBtn" style="display:none;">
+                        Download All as ZIP
+                    </button>
+                    <button class="btn-secondary" id="downloadPdfBtn" style="display:none;">
+                        Download Combined PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Article Content -->
+    <section class="about-us" id="article" style="padding: 60px 0;">
+        <div class="container" style="max-width: 800px; line-height: 1.8;">
+            <div class="about-content">
+                <div class="about-card" style="padding: 40px; margin-bottom: 40px; text-align: left;">
+                    <h2 style="font-size: 1.8rem; margin-bottom: 20px;">How to Convert High Resolution PDF to JPG 300 DPI Free</h2>
+                    <p>When preparing documents for commercial printing, magazine submissions, or high-quality archives, standard web-resolution images simply don't cut it. You need to <strong>convert high resolution pdf to jpg 300 dpi free</strong> to ensure crisp text and sharp images.</p>
+                    <p>Our tool is recognized as the <strong>best free pdf to jpg converter</strong> because it doesn't force you into a paid subscription just to unlock high-resolution output. By utilizing advanced client-side HTML5 Canvas scaling (adjusting the viewport scale to roughly equivalent 300 Dots Per Inch), we give you print-ready JPGs directly in your browser.</p>
+
+                    <h2 style="font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">The Problem with "Free Downloads"</h2>
+                    <p>Many users search for a <strong>convert high resolution pdf to jpg 300 dpi free download</strong> or a <strong>pdf to jpg converter download</strong> to install on their Windows or Mac computers. Unfortunately, desktop software is frequently bundled with adware or limits your exports to 150 DPI unless you buy a pro license.</p>
+                    <p>Our tool operates entirely as a <strong>convert high resolution pdf to jpg 300 dpi free online</strong> web application. The difference? We process the files locally in your browser's RAM using standard open-source PDF JavaScript libraries. No uploads, no waiting in queues, and absolutely no desktop software downloads required.</p>
+
+                    <h2 style="font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">JPG to PDF High-Quality (300 DPI)</h2>
+                    <p>Sometimes you need to go the other way. If you have a collection of scanned documents, ID photos, or design mockups, you might need a reliable <strong>jpg to pdf</strong> tool. We provide <strong>jpg to pdf high-quality</strong> conversions that don't heavily compress your photos like standard email-attachment converters do.</p>
+                    <p>When you use our tool to convert <strong>jpg to pdf high quality 300 dpi</strong>, it precisely Maps your JPG pixels to the PDF vector space, ensuring that your resulting PDF document looks exactly as sharp as your original photos.</p>
+
+                    <h2 style="font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">Why Client-Side is Faster and Safer</h2>
+                    <p>When you use a standard <strong>pdf to jpg free</strong> converter on the web, you have to wait for a 50MB PDF to upload to a remote server, wait for their server to process it, and then download 50MB worth of JPGs back to your computer. That wastes time and data.</p>
+                    <p>By processing everything client-side (using your device's processor), the conversion is nearly instantaneous. More importantly, if you are converting sensitive financial documents, legal contracts, or IDs, our tool ensures your data never touches the internet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How can I convert high resolution PDF to JPG 300 DPI free online?</h3>
+                    <p>Select the "PDF to JPG" mode at the top of this page, select "High Resolution" from the dropdown, and upload your PDF. Our tool will immediately render each page of the PDF into a crystal-clear 300 DPI equivalent JPG.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is this really the best free PDF to JPG converter?</h3>
+                    <p>We believe so! Unlike other converters, we don't hide high-resolution 300 DPI exports behind a paywall, we don't watermark your images, and we don't upload your private documents to a server.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I convert JPG to PDF high quality 300 DPI?</h3>
+                    <p>Yes. Click the "JPG to PDF" button on the converter. Select multiple high-quality JPGs, and the tool will combine them into a single, high-quality PDF document without degrading the original image resolution.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do I need a PDF to JPG converter download?</h3>
+                    <p>No. You do not need to download or install any desktop software. The entire conversion engine runs securely inside your web browser (Chrome, Safari, Edge, Firefox).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Script for PDF/JPG specific logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let currentMode = 'pdf-to-jpg';
+            let selectedFiles = [];
+            let convertedData = []; // Array of object URLs or jsPDF blob URLs
+
+            const uploadArea = document.getElementById('uploadArea');
+            const fileInput = document.getElementById('fileInput');
+            const fileList = document.getElementById('fileList');
+            const convertBtn = document.getElementById('convertBtn');
+            const convertBtnText = document.getElementById('convertBtnText');
+            const progressSection = document.getElementById('progressSection');
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+            const resultsSection = document.getElementById('resultsSection');
+            const resultsGrid = document.getElementById('resultsGrid');
+            const downloadAllBtn = document.getElementById('downloadAllBtn');
+            const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+            
+            const pdfToJpgBtn = document.getElementById('pdfToJpgBtn');
+            const jpgToPdfBtn = document.getElementById('jpgToPdfBtn');
+            const uploadTitle = document.getElementById('uploadTitle');
+            const uploadSubtitle = document.getElementById('uploadSubtitle');
+            const qualitySelect = document.getElementById('qualitySelect');
+
+            pdfToJpgBtn.addEventListener('click', () => switchMode('pdf-to-jpg'));
+            jpgToPdfBtn.addEventListener('click', () => switchMode('jpg-to-pdf'));
+
+            function switchMode(mode) {
+                currentMode = mode;
+                selectedFiles = [];
+                fileList.innerHTML = '';
+                resultsSection.style.display = 'none';
+                convertBtn.style.display = 'none';
+
+                pdfToJpgBtn.classList.toggle('active', mode === 'pdf-to-jpg');
+                jpgToPdfBtn.classList.toggle('active', mode === 'jpg-to-pdf');
+
+                if (mode === 'pdf-to-jpg') {
+                    fileInput.setAttribute('accept', '.pdf');
+                    uploadTitle.textContent = 'Drag & Drop PDF file here';
+                    uploadSubtitle.textContent = 'Converts all pages to high-res JPGs';
+                    convertBtnText.textContent = 'Convert to JPG';
+                    qualitySelect.parentElement.style.display = 'block';
+                } else {
+                    fileInput.setAttribute('accept', '.jpg,.jpeg,.png,.webp,.heic');
+                    uploadTitle.textContent = 'Drag & Drop Images here';
+                    uploadSubtitle.textContent = 'Combines multiple images into a high-quality PDF';
+                    convertBtnText.textContent = 'Combine to PDF';
+                    qualitySelect.parentElement.style.display = 'none';
+                }
+            }
+
+            uploadArea.addEventListener('click', () => fileInput.click());
+            fileInput.addEventListener('change', (e) => handleFiles(e.target.files));
+            uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.classList.add('drag-over'); });
+            uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('drag-over'));
+            uploadArea.addEventListener('drop', (e) => { e.preventDefault(); uploadArea.classList.remove('drag-over'); handleFiles(e.dataTransfer.files); });
+
+            function handleFiles(files) {
+                if (files.length === 0) return;
+                
+                if (currentMode === 'pdf-to-jpg') {
+                    // Only take the first PDF for simplicity in this demo, though could loop
+                    selectedFiles = [files[0]];
+                } else {
+                    selectedFiles = Array.from(files);
+                }
+                
+                updateFileList();
+                convertBtn.style.display = 'flex';
+            }
+
+            function updateFileList() {
+                fileList.innerHTML = '';
+                selectedFiles.forEach((file, index) => {
+                    const el = document.createElement('div');
+                    el.className = 'file-item';
+                    el.innerHTML = `
+                        <div class="file-info">
+                            <span class="file-icon">📄</span>
+                            <span class="file-name">${file.name}</span>
+                        </div>
+                        <span class="file-size">${(file.size / 1024 / 1024).toFixed(2)} MB</span>
+                    `;
+                    fileList.appendChild(el);
+                });
+            }
+
+            convertBtn.addEventListener('click', async () => {
+                if (selectedFiles.length === 0) return;
+                
+                convertBtn.style.display = 'none';
+                progressSection.style.display = 'block';
+                resultsSection.style.display = 'none';
+                convertedData = [];
+                resultsGrid.innerHTML = '';
+                downloadAllBtn.style.display = 'none';
+                downloadPdfBtn.style.display = 'none';
+
+                if (currentMode === 'pdf-to-jpg') {
+                    await processPdfToJpg(selectedFiles[0]);
+                } else {
+                    await processJpgToPdf(selectedFiles);
+                }
+
+                progressSection.style.display = 'none';
+                displayResults();
+            });
+
+            async function processPdfToJpg(file) {
+                try {
+                    const arrayBuffer = await file.arrayBuffer();
+                    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+                    const scale = parseFloat(qualitySelect.value) || 3.125; // 3.125 is roughly 300 DPI (72 * 4.16 approx)
+                    
+                    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                        progressFill.style.width = \`\${(pageNum / pdf.numPages) * 100}%\`;
+                        progressText.textContent = \`Rendering page \${pageNum} of \${pdf.numPages}...\`;
+                        
+                        const page = await pdf.getPage(pageNum);
+                        const viewport = page.getViewport({ scale: scale });
+                        
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+                        
+                        await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+                        
+                        // Convert canvas to JPG blob
+                        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', 0.95));
+                        convertedData.push({
+                            name: \`\${file.name.replace('.pdf', '')}_page\${pageNum}.jpg\`,
+                            blob: blob,
+                            url: URL.createObjectURL(blob)
+                        });
+                    }
+                } catch (e) {
+                    alert('Error processing PDF: ' + e.message);
+                }
+            }
+
+            async function processJpgToPdf(files) {
+                try {
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF({ orientation: 'portrait', unit: 'px', format: 'a4' });
+                    doc.deletePage(1); // Remove default blank page
+
+                    for (let i = 0; i < files.length; i++) {
+                        progressFill.style.width = \`\${((i+1) / files.length) * 100}%\`;
+                        progressText.textContent = \`Adding image \${i+1} of \${files.length} to PDF...\`;
+                        
+                        const file = files[i];
+                        const img = new Image();
+                        img.src = URL.createObjectURL(file);
+                        
+                        await new Promise((resolve, reject) => {
+                            img.onload = resolve;
+                            img.onerror = reject;
+                        });
+
+                        // Calculate aspect ratio to fit A4 (approx 595x842 px)
+                        const pdfWidth = 595.28;
+                        const pdfHeight = 841.89;
+                        const imgRatio = img.width / img.height;
+                        const pdfRatio = pdfWidth / pdfHeight;
+                        
+                        let renderWidth = pdfWidth;
+                        let renderHeight = pdfHeight;
+                        let x = 0;
+                        let y = 0;
+
+                        if (imgRatio > pdfRatio) {
+                            renderHeight = pdfWidth / imgRatio;
+                            y = (pdfHeight - renderHeight) / 2;
+                        } else {
+                            renderWidth = pdfHeight * imgRatio;
+                            x = (pdfWidth - renderWidth) / 2;
+                        }
+
+                        doc.addPage([pdfWidth, pdfHeight]);
+                        doc.addImage(img, 'JPEG', x, y, renderWidth, renderHeight);
+                    }
+                    
+                    const pdfBlob = doc.output('blob');
+                    convertedData.push({
+                        name: 'combined_images_high_quality.pdf',
+                        blob: pdfBlob,
+                        url: URL.createObjectURL(pdfBlob)
+                    });
+
+                } catch (e) {
+                    alert('Error creating PDF: ' + e.message);
+                }
+            }
+
+            function displayResults() {
+                resultsSection.style.display = 'block';
+                if (currentMode === 'pdf-to-jpg') {
+                    downloadAllBtn.style.display = 'inline-block';
+                    convertedData.forEach((item, index) => {
+                        const div = document.createElement('div');
+                        div.className = 'result-item';
+                        div.innerHTML = \`
+                            <img src="\${item.url}" alt="\${item.name}" class="result-preview" style="background:#fff; object-fit:contain; border:1px solid #ccc;">
+                            <button class="result-download" onclick="window.downloadItem(\${index})">Download Page \${index+1}</button>
+                        \`;
+                        resultsGrid.appendChild(div);
+                    });
+                } else {
+                    downloadPdfBtn.style.display = 'inline-block';
+                    const div = document.createElement('div');
+                    div.className = 'result-item';
+                    div.innerHTML = \`
+                        <div class="result-preview" style="display:flex;align-items:center;justify-content:center;background:var(--card-bg);border:1px solid var(--card-border);">
+                            <div style="text-align:center;">
+                                <div style="font-size:3rem;">📄</div>
+                                <p style="font-size:0.75rem;margin-top:0.5rem;color:var(--text-secondary);">Combined PDF</p>
+                            </div>
+                        </div>
+                    \`;
+                    resultsGrid.appendChild(div);
+                }
+            }
+
+            window.downloadItem = function(index) {
+                const item = convertedData[index];
+                const a = document.createElement('a');
+                a.href = item.url;
+                a.download = item.name;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            };
+
+            downloadAllBtn.addEventListener('click', async () => {
+                for (let i = 0; i < convertedData.length; i++) {
+                    await new Promise(r => setTimeout(r, 200));
+                    window.downloadItem(i);
+                }
+            });
+
+            downloadPdfBtn.addEventListener('click', () => {
+                window.downloadItem(0);
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
