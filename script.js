@@ -34,14 +34,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // Mode buttons
     const encToJpgBtn = document.getElementById('encToJpgBtn');
     const jpgToEncBtn = document.getElementById('jpgToEncBtn');
+    const compressBtn = document.getElementById('compressBtn');
 
     // ===========================
     // Event Listeners
     // ===========================
 
     // Mode switcher
-    encToJpgBtn.addEventListener('click', () => switchMode('enc-to-jpg'));
-    jpgToEncBtn.addEventListener('click', () => switchMode('jpg-to-enc'));
+    if(encToJpgBtn) encToJpgBtn.addEventListener('click', () => switchMode('enc-to-jpg'));
+    if(jpgToEncBtn) jpgToEncBtn.addEventListener('click', () => switchMode('jpg-to-enc'));
+    if(compressBtn) compressBtn.addEventListener('click', () => switchMode('compress-image'));
 
     // Click to upload
     uploadArea.addEventListener('click', () => {
@@ -85,16 +87,24 @@ document.addEventListener('DOMContentLoaded', function () {
         convertedImages = [];
 
         // Update UI
-        encToJpgBtn.classList.toggle('active', mode === 'enc-to-jpg');
-        jpgToEncBtn.classList.toggle('active', mode === 'jpg-to-enc');
+        if(encToJpgBtn) encToJpgBtn.classList.toggle('active', mode === 'enc-to-jpg');
+        if(jpgToEncBtn) jpgToEncBtn.classList.toggle('active', mode === 'jpg-to-enc');
+        if(compressBtn) compressBtn.classList.toggle('active', mode === 'compress-image');
 
         // Update file input accept attribute
-        if (mode === 'enc-to-jpg') {
-            fileInput.setAttribute('accept', '.enc');
-            uploadTitle.textContent = 'Drag & Drop ENC files here';
-            uploadInfo.textContent = 'Supports .enc files from WhatsApp, S-63, CopySafe, and more';
-            convertBtnText.textContent = 'Convert to JPG';
-            passwordLabel.textContent = 'Decryption Key/Password (if required):';
+        if (mode === 'compress-image') {
+            if(fileInput) fileInput.setAttribute('accept', 'image/*');
+            if(uploadTitle) uploadTitle.textContent = 'Drag & Drop images here';
+            if(uploadInfo) uploadInfo.textContent = 'Local compression ensures zero data leaves your device';
+            if(convertBtnText) convertBtnText.textContent = 'Compress Images';
+            if(passwordLabel) passwordLabel.textContent = '';
+            if(passwordSection) passwordSection.style.display = 'none';
+        } else if (mode === 'enc-to-jpg') {
+            if(fileInput) fileInput.setAttribute('accept', '.enc');
+            if(uploadTitle) uploadTitle.textContent = 'Drag & Drop ENC files here';
+            if(uploadInfo) uploadInfo.textContent = 'Supports .enc files from WhatsApp, S-63, CopySafe, and more';
+            if(convertBtnText) convertBtnText.textContent = 'Convert to JPG';
+            if(passwordLabel) passwordLabel.textContent = 'Decryption Key/Password (if required):';
         } else {
             fileInput.setAttribute('accept', '.jpg,.jpeg,.jpe,.jfif,image/jpeg');
             uploadTitle.textContent = 'Drag & Drop JPG/JPEG files here';
@@ -122,27 +132,35 @@ document.addEventListener('DOMContentLoaded', function () {
         const fileArray = Array.from(files);
 
         fileArray.forEach(file => {
-            if (currentMode === 'enc-to-jpg') {
+            const ext = file.name.split('.').pop().toLowerCase();
+            if (currentMode === 'compress-image') {
+                if (file.type.startsWith('image/')) {
+                    selectedFiles.push(file);
+                } else {
+                    showNotification('Please select image files only', 'error');
+                }
+            } else if (currentMode && currentMode.startsWith('enc-')) {
                 // Check for .enc files
-                if (file.name.toLowerCase().endsWith('.enc') || file.type === '') {
+                if (ext === 'enc' || file.type === '') {
                     selectedFiles.push(file);
                 } else {
                     showNotification('Please select ENC files only', 'error');
                 }
-            } else {
-                // Check for JPG/JPEG files
-                if (file.type.startsWith('image/jpeg') || file.type.startsWith('image/jpg') ||
-                    file.name.toLowerCase().match(/\.(jpg|jpeg|jpe|jfif)$/)) {
+            } else if (currentMode && currentMode.endsWith('-enc')) {
+                if (file.type.startsWith('image/') || ext.match(/(jpg|jpeg|png)$/)) {
                     selectedFiles.push(file);
                 } else {
-                    showNotification('Please select JPG/JPEG files only', 'error');
+                    showNotification('Please select image files only', 'error');
                 }
+            } else {
+                // Universal mode (heic-to-jpg, webp-to-png, etc)
+                selectedFiles.push(file); // allow any image file for generic converter tools
             }
         });
 
         if (selectedFiles.length > 0) {
             displayFileList();
-            convertBtn.style.display = 'inline-flex';
+            if(convertBtn) convertBtn.style.display = 'inline-flex';
         }
     }
 
@@ -222,7 +240,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 let convertedData;
                 let outputName;
 
-                if (currentMode === 'enc-to-jpg') {
+                if (currentMode === 'compress-image') {
+                    const slider = document.getElementById('compressionSlider');
+                    const quality = slider ? parseInt(slider.value) / 100 : 0.6;
+                    convertedData = await compressImageLocally(file, quality);
+                    outputName = file.name.replace(/\.[^/.]+$/, "") + "-compressed.jpg";
+                } else if (currentMode === 'enc-to-jpg') {
                     const formatSelect = document.getElementById('outputFormat');
                     const outputMimeType = formatSelect ? formatSelect.value : 'image/jpeg';
                     const ext = outputMimeType === 'image/png' ? '.png' : (outputMimeType === 'image/jpeg' ? '.jpg' : '.jpg');
@@ -565,3 +588,27 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Select files to begin conversion');
 
 }); // End of DOMContentLoaded
+
+// Image Compression
+async function compressImageLocally(file, quality) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const img = new Image();
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+                canvas.toBlob((blob) => {
+                    resolve(blob);
+                }, 'image/jpeg', quality);
+            };
+            img.onerror = reject;
+            img.src = e.target.result;
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}

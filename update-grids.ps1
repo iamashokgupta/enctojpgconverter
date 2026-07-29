@@ -9,6 +9,30 @@ foreach ($file in $files) {
         
         $newGrid = @"
             <div class="tools-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                                                                <a href="${prefix}html-file-opener-online/" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">HTML File Opener</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Open HTML files, edit code, and convert Webpages to PDF/JPG instantly.</p>
+                    </div>
+                </a>
+                <a href="${prefix}convert-photo-to-pencil-sketch-online-free/" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Photo to Sketch</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Turn your photo into a beautiful pencil sketch online instantly.</p>
+                    </div>
+                </a>
+                <a href="${prefix}watermark-pdf-online/" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Watermark PDF</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Add text or image watermarks to your PDFs online for free.</p>
+                    </div>
+                </a>
+                <a href="${prefix}image-compress-online-reduce-image-size/" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Image Compressor</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Reduce image size to 20KB or 50KB free online.</p>
+                    </div>
+                </a>
                 <a href="${prefix}browser-based-heic-converter-fast/" style="text-decoration: none; color: inherit;">
                     <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
                         <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Browser Based HEIC</h3>
@@ -93,24 +117,14 @@ foreach ($file in $files) {
                         <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert .enc files to compressed JPG photos. Smaller files, ideal for photographs.</p>
                     </div>
                 </a>
-                <a href="${prefix}enc-to-pdf-converter/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: var(--spacing-xs); font-size: 1.25rem;">ENC to PDF Converter</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert standard ENC and Maritime Charts to PDF documents.</p>
-                    </div>
-                </a>
-                <a href="${prefix}enc-file-viewer/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: var(--spacing-xs); font-size: 1.25rem;">ENC File Viewer</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Open, view, and decode ENC files securely online.</p>
-                    </div>
-                </a>
             </div>
 "@
         
         $content = $content -replace '(?s)<div class="tools-grid".*?</div>(?=\s*</div>\s*</section>)', $newGrid
         
         Set-Content -Path $file.FullName -Value $content
-        Write-Host "Updated $($file.Name)"
     }
 }
+
+
+
