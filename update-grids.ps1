@@ -9,7 +9,31 @@ foreach ($file in $files) {
         
         $newGrid = @"
             <div class="tools-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                                                                <a href="${prefix}html-file-opener-online/" style="text-decoration: none; color: inherit;">
+                                                                                                                                <a href="${prefix}add-name-date-on-photo-online/" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Name & Date on Photo</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Add name, date & text onto photos with passport crop presets.</p>
+                    </div>
+                </a>
+                <a href="${prefix}powerpoint-to-pdf-converter-online/" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">PowerPoint to PDF</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert PPT and PPTX presentations to static PDF documents securely.</p>
+                    </div>
+                </a>
+                <a href="${prefix}resize-image-in-cm-online/" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Resize Image in CM</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Change photo size to specific CM/MM dimensions for passports.</p>
+                    </div>
+                </a>
+                <a href="${prefix}png-to-text-converter-online/" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Image to Text (OCR)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Extract text from images instantly using free client-side OCR.</p>
+                    </div>
+                </a>
+                <a href="${prefix}html-file-opener-online/" style="text-decoration: none; color: inherit;">
                     <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
                         <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">HTML File Opener</h3>
                         <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Open HTML files, edit code, and convert Webpages to PDF/JPG instantly.</p>
@@ -125,6 +149,10 @@ foreach ($file in $files) {
         Set-Content -Path $file.FullName -Value $content
     }
 }
+
+
+
+
 
 
 
