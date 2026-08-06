@@ -9,7 +9,13 @@ foreach ($file in $files) {
         
         $newGrid = @"
             <div class="tools-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                                                                                                                                <a href="${prefix}add-name-date-on-photo-online/" style="text-decoration: none; color: inherit;">
+                                                                                                                                                <a href="${prefix}percentage-calculator-online/" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Percentage Calculator</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Calculate percentage of marks, CGPA, semesters instantly.</p>
+                    </div>
+                </a>
+                <a href="${prefix}add-name-date-on-photo-online/" style="text-decoration: none; color: inherit;">
                     <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
                         <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Name & Date on Photo</h3>
                         <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Add name, date & text onto photos with passport crop presets.</p>
@@ -149,6 +155,7 @@ foreach ($file in $files) {
         Set-Content -Path $file.FullName -Value $content
     }
 }
+
 
 
 

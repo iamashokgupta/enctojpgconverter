@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="canonical" href="https://enctojpgconverter.online/percentage-calculator-online/">
+    <title>Percentage Calculator Online – Calculate Marks Percentage Free</title>
+    <meta name="title" content="Percentage Calculator Online – Calculate Marks Percentage Free">
+    <meta name="description"
+        content="Free percentage calculator for 10th, 12th marks, 5-7 subjects, semesters, and grade systems. Instantly calculate percentage of marks online.">
+    <meta name="keywords"
+        content="percentage formula, how to calculate percentage of marks of 6 subjects, how to calculate percentage of marks of 12th class, 10th mark percentage calculator, how to calculate percentage of marks of 5 subjects, how to calculate percentage of marks of 7 subjects, how to calculate percentage of 6 semesters, how to calculate percentage of marks in grade system">
+    <meta name="author" content="ENC Converter Tool">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enctojpgconverter.online/percentage-calculator-online/">
+    <meta property="og:title" content="Percentage Calculator Online – Calculate Marks Percentage Free">
+    <meta property="og:description" content="Free percentage calculator for 10th, 12th marks, 5-7 subjects, semesters, and grade systems.">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://enctojpgconverter.online/percentage-calculator-online/">
+    <meta property="twitter:title" content="Percentage Calculator Online – Calculate Marks Percentage Free">
+    <meta property="twitter:description" content="Free percentage calculator for 10th, 12th marks, 5-7 subjects, semesters, and grade systems.">
+
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Percentage Calculator Online",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Free online percentage calculator for students. Calculate marks percentage for 10th, 12th, semesters, and grade systems instantly."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is the percentage formula for marks?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Percentage = (Total Marks Obtained / Total Maximum Marks) × 100. For example, if you scored 450 out of 600, your percentage is (450/600) × 100 = 75%." }
+      }, {
+        "@type": "Question",
+        "name": "How to calculate percentage of marks of 6 subjects?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Add all the marks obtained in all 6 subjects, then divide by the total maximum marks of all 6 subjects, and multiply by 100. Example: (80+75+90+85+70+88) / (6×100) × 100 = 81.33%." }
+      }, {
+        "@type": "Question",
+        "name": "How to calculate percentage of marks in grade system?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Convert each grade to its grade point (A+=10, A=9, B+=8, etc.), calculate the average CGPA, then use the formula: Percentage = (CGPA × 9.5) for CBSE, or (CGPA - 0.75) × 10 for other boards." }
+      }]
+    }
+    </script>
+
+    <style>
+        .calc-tabs { display: flex; gap: 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 20px; flex-wrap: wrap; }
+        .calc-tab {
+            flex: 1; min-width: 120px; padding: 12px 10px; text-align: center; cursor: pointer; font-weight: 600; font-size: 0.85rem;
+            background: var(--bg-secondary); color: var(--text-secondary); border: none; transition: all 0.2s;
+        }
+        .calc-tab.active { background: linear-gradient(135deg, #6366F1, #A855F7); color: #fff; }
+        .calc-tab:hover:not(.active) { background: var(--bg-primary); }
+
+        .calc-panel { display: none; }
+        .calc-panel.active { display: block; }
+
+        .subject-row {
+            display: grid; grid-template-columns: 1fr 100px 100px; gap: 10px; align-items: center; margin-bottom: 10px;
+        }
+        @media (max-width: 500px) { .subject-row { grid-template-columns: 1fr 80px 80px; gap: 6px; } }
+        .subject-row label { font-weight: 500; font-size: 0.9rem; color: var(--text-primary); }
+        .subject-row input {
+            padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 0.9rem;
+            background: var(--bg-primary); color: var(--text-primary); box-sizing: border-box; text-align: center;
+        }
+        .subject-row-header { font-weight: 700; font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .result-card {
+            margin-top: 20px; padding: 25px; border-radius: 12px; text-align: center;
+            background: linear-gradient(135deg, #6366F1, #A855F7); color: #fff; display: none;
+        }
+        .result-card .pct-value { font-size: 3rem; font-weight: 800; line-height: 1; }
+        .result-card .pct-label { font-size: 0.95rem; opacity: 0.85; margin-top: 6px; }
+        .result-card .grade-badge {
+            display: inline-block; margin-top: 12px; padding: 6px 18px; border-radius: 20px;
+            background: rgba(255,255,255,0.25); font-weight: 700; font-size: 1rem;
+        }
+        .add-remove-btns { display: flex; gap: 8px; margin-bottom: 15px; }
+        .add-remove-btns button {
+            padding: 6px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary);
+            cursor: pointer; font-size: 0.85rem; color: var(--text-primary); transition: all 0.2s;
+        }
+        .add-remove-btns button:hover { background: #6366F1; color: #fff; border-color: #6366F1; }
+
+        .grade-row { display: grid; grid-template-columns: 1fr 120px 80px; gap: 10px; align-items: center; margin-bottom: 10px; }
+        .grade-row select, .grade-row input {
+            padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 0.9rem;
+            background: var(--bg-primary); color: var(--text-primary); box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="url(#logo-gradient)" />
+                        <path d="M20 10L28 15V25L20 30L12 25V15L20 10Z" stroke="white" stroke-width="2" stroke-linejoin="round" />
+                        <circle cx="20" cy="20" r="3" fill="white" />
+                        <defs><linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#6366F1" /><stop offset="1" stop-color="#A855F7" /></linearGradient></defs>
+                    </svg>
+                    <span>ENC Converter Tools</span>
+                </div>
+                <nav class="nav">
+                    <a href="../index.html">Home</a>
+                    <a href="#article">Guide</a>
+                    <a href="#faq">FAQ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Percentage</span> Calculator
+                </h1>
+                <p class="hero-subtitle">
+                    Instantly calculate percentage of marks for 10th, 12th class, 5–7 subjects, semesters, and grade systems. <strong>100% free</strong>.
+                </p>
+                <div class="hero-badges">
+                    <span class="badge">📐 Percentage Formula</span>
+                    <span class="badge">🎓 10th / 12th Marks</span>
+                    <span class="badge">📊 Semester & CGPA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="converter-section">
+        <div class="container" style="max-width: 750px; margin: 0 auto;">
+            <div class="converter-card">
+
+                <!-- Tabs -->
+                <div class="calc-tabs">
+                    <button class="calc-tab active" data-panel="marks">📝 Marks</button>
+                    <button class="calc-tab" data-panel="semester">🎓 Semester</button>
+                    <button class="calc-tab" data-panel="grade">📊 Grade/CGPA</button>
+                    <button class="calc-tab" data-panel="general">🔢 General %</button>
+                </div>
+
+                <!-- Panel 1: Marks Percentage -->
+                <div class="calc-panel active" id="panel-marks">
+                    <p style="margin-bottom: 15px; color: var(--text-secondary); font-size: 0.9rem;">Enter marks obtained and maximum marks for each subject. Add or remove subjects as needed.</p>
+                    
+                    <div class="subject-row">
+                        <span class="subject-row-header">Subject</span>
+                        <span class="subject-row-header" style="text-align: center;">Obtained</span>
+                        <span class="subject-row-header" style="text-align: center;">Max</span>
+                    </div>
+                    <div id="subjectRows">
+                        <!-- JS will populate -->
+                    </div>
+                    <div class="add-remove-btns">
+                        <button id="addSubjectBtn">+ Add Subject</button>
+                        <button id="removeSubjectBtn">− Remove Subject</button>
+                    </div>
+                    <button class="btn-primary" id="calcMarksBtn" style="width: 100%;">Calculate Percentage</button>
+                    <div class="result-card" id="resultMarks">
+                        <div class="pct-value" id="marksPercent">0%</div>
+                        <div class="pct-label" id="marksDetail"></div>
+                        <div class="grade-badge" id="marksGrade"></div>
+                    </div>
+                </div>
+
+                <!-- Panel 2: Semester -->
+                <div class="calc-panel" id="panel-semester">
+                    <p style="margin-bottom: 15px; color: var(--text-secondary); font-size: 0.9rem;">Enter your percentage or SGPA for each semester to get the overall aggregate.</p>
+                    
+                    <div id="semesterRows"></div>
+                    <div class="add-remove-btns">
+                        <button id="addSemBtn">+ Add Semester</button>
+                        <button id="removeSemBtn">− Remove Semester</button>
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-weight: 500; font-size: 0.9rem;">Input Type:</label>
+                        <select id="semInputType" style="padding: 8px; border-radius: 8px; border: 1px solid var(--border-color); margin-left: 8px;">
+                            <option value="percentage">Percentage (%)</option>
+                            <option value="sgpa">SGPA (10-point scale)</option>
+                        </select>
+                    </div>
+
+                    <button class="btn-primary" id="calcSemBtn" style="width: 100%;">Calculate Overall Percentage</button>
+                    <div class="result-card" id="resultSem">
+                        <div class="pct-value" id="semPercent">0%</div>
+                        <div class="pct-label" id="semDetail"></div>
+                        <div class="grade-badge" id="semGrade"></div>
+                    </div>
+                </div>
+
+                <!-- Panel 3: Grade/CGPA -->
+                <div class="calc-panel" id="panel-grade">
+                    <p style="margin-bottom: 15px; color: var(--text-secondary); font-size: 0.9rem;">Enter your CGPA to convert to percentage, or enter individual subject grades.</p>
+                    
+                    <div style="margin-bottom: 15px; padding: 15px; background: var(--bg-secondary); border-radius: 8px; border: 1px solid var(--border-color);">
+                        <label style="font-weight: 600; display: block; margin-bottom: 8px;">Board / University:</label>
+                        <select id="boardSelect" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 1rem; background: var(--bg-primary);">
+                            <option value="cbse" selected>CBSE (Percentage = CGPA × 9.5)</option>
+                            <option value="vtu">VTU / General (Percentage = (CGPA - 0.75) × 10)</option>
+                            <option value="custom">Custom Multiplier</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-weight: 500; display: block; margin-bottom: 8px;">Your CGPA:</label>
+                        <input type="number" id="cgpaInput" step="0.01" min="0" max="10" placeholder="e.g. 8.6" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 1rem; box-sizing: border-box;">
+                    </div>
+
+                    <div id="customMultiplierRow" style="display: none; margin-bottom: 15px;">
+                        <label style="font-weight: 500; display: block; margin-bottom: 8px;">Custom Multiplier:</label>
+                        <input type="number" id="customMultiplier" step="0.1" value="9.5" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 1rem; box-sizing: border-box;">
+                    </div>
+
+                    <button class="btn-primary" id="calcGradeBtn" style="width: 100%;">Convert CGPA to Percentage</button>
+                    <div class="result-card" id="resultGrade">
+                        <div class="pct-value" id="gradePercent">0%</div>
+                        <div class="pct-label" id="gradeDetail"></div>
+                        <div class="grade-badge" id="gradeGradeBadge"></div>
+                    </div>
+                </div>
+
+                <!-- Panel 4: General -->
+                <div class="calc-panel" id="panel-general">
+                    <p style="margin-bottom: 15px; color: var(--text-secondary); font-size: 0.9rem;">Use the basic percentage formula: <strong>Percentage = (Value / Total) × 100</strong></p>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                        <div>
+                            <label style="font-weight: 500; display: block; margin-bottom: 8px;">Value (Obtained):</label>
+                            <input type="number" id="genValue" placeholder="e.g. 450" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 1rem; box-sizing: border-box;">
+                        </div>
+                        <div>
+                            <label style="font-weight: 500; display: block; margin-bottom: 8px;">Total (Maximum):</label>
+                            <input type="number" id="genTotal" placeholder="e.g. 600" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 1rem; box-sizing: border-box;">
+                        </div>
+                    </div>
+                    <button class="btn-primary" id="calcGenBtn" style="width: 100%;">Calculate Percentage</button>
+                    <div class="result-card" id="resultGen">
+                        <div class="pct-value" id="genPercent">0%</div>
+                        <div class="pct-label" id="genDetail"></div>
+                        <div class="grade-badge" id="genGrade"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Article -->
+    <section class="about-us" id="article" style="padding: 60px 0;">
+        <div class="container" style="max-width: 800px; line-height: 1.8;">
+            <div class="about-content">
+                <div class="about-card" style="padding: 40px; margin-bottom: 40px; text-align: left;">
+
+                    <h2 style="font-size: 1.8rem; margin-bottom: 20px;">Percentage Formula: How to Calculate Percentage of Marks</h2>
+                    <p>The <strong>percentage formula</strong> is one of the most fundamental mathematical calculations every student needs. Whether you just received your 10th board results, 12th class marksheet, or university semester grades, calculating your overall percentage is the first thing you do. The universal formula is:</p>
+                    <blockquote style="border-left: 4px solid var(--accent-primary); padding: 15px 20px; background: var(--bg-secondary); font-size: 1.1rem; font-weight: 600;">
+                        Percentage (%) = (Total Marks Obtained ÷ Total Maximum Marks) × 100
+                    </blockquote>
+
+                    <h2 style="font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">How to Calculate Percentage of Marks of 5 Subjects</h2>
+                    <p>If you have 5 subjects (common in ICSE or some state boards), the calculation is straightforward. Suppose your marks are:</p>
+                    <ul>
+                        <li>English: 85/100</li>
+                        <li>Maths: 92/100</li>
+                        <li>Science: 78/100</li>
+                        <li>Social Studies: 88/100</li>
+                        <li>Hindi: 75/100</li>
+                    </ul>
+                    <p><strong>Total Obtained:</strong> 85 + 92 + 78 + 88 + 75 = <strong>418</strong><br>
+                    <strong>Total Maximum:</strong> 5 × 100 = <strong>500</strong><br>
+                    <strong>Percentage:</strong> (418 / 500) × 100 = <strong>83.6%</strong></p>
+
+                    <h2 style="font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">How to Calculate Percentage of Marks of 6 Subjects</h2>
+                    <p>For CBSE and most state boards, students have 6 subjects in their 10th and 12th examinations. The process is identical — you simply add marks for all 6 subjects. For example, if you scored 480 out of 600, your percentage is (480/600) × 100 = <strong>80%</strong>.</p>
+                    <p>Our <strong>10th mark percentage calculator</strong> above automates this. Just type in your 6 subject marks and hit Calculate.</p>
+
+                    <h2 style="font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">How to Calculate Percentage of Marks of 7 Subjects</h2>
+                    <p>Some boards include an additional subject (like a second language or vocational subject), bringing the total to 7. The formula remains the same — simply add all 7 obtained marks, divide by the total maximum (e.g., 700), and multiply by 100.</p>
+
+                    <h2 style="font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">How to Calculate Percentage of Marks of 12th Class</h2>
+                    <p>Calculating the <strong>percentage of marks of 12th class</strong> is critical because it directly impacts college admissions, scholarship eligibility, and competitive exam cutoffs. Most 12th boards have 5 main subjects. Some students calculate "best of 4" or "best of 5" depending on the university's requirements.</p>
+                    <p>Our tool lets you add as many subjects as needed and instantly get the result.</p>
+
+                    <h2 style="font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">How to Calculate Percentage of 6 Semesters</h2>
+                    <p>For undergraduate students (B.Tech, BCA, B.Com, BA, etc.), the overall percentage is typically the average of all semester percentages or an aggregate calculated from total marks across all semesters.</p>
+                    <ul>
+                        <li><strong>Method 1 (Average):</strong> Add all semester percentages and divide by the number of semesters.</li>
+                        <li><strong>Method 2 (Aggregate):</strong> Add all marks obtained across all semesters and divide by total maximum marks across all semesters.</li>
+                    </ul>
+                    <p>Use our "Semester" tab above to calculate this instantly for 4, 6, or 8 semesters.</p>
+
+                    <h2 style="font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px;">How to Calculate Percentage of Marks in Grade System</h2>
+                    <p>Many modern boards (CBSE, ICSE) and universities use a grade-point system (CGPA) instead of raw percentage. To convert:</p>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <thead>
+                                <tr style="background: var(--bg-secondary);">
+                                    <th style="padding: 12px; border: 1px solid var(--border-color);">Grade</th>
+                                    <th style="padding: 12px; border: 1px solid var(--border-color);">Grade Point</th>
+                                    <th style="padding: 12px; border: 1px solid var(--border-color);">Marks Range</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;"><strong>A1</strong></td><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">10</td><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">91–100</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;"><strong>A2</strong></td><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">9</td><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">81–90</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;"><strong>B1</strong></td><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">8</td><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">71–80</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;"><strong>B2</strong></td><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">7</td><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">61–70</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;"><strong>C1</strong></td><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">6</td><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">51–60</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;"><strong>C2</strong></td><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">5</td><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">41–50</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;"><strong>D</strong></td><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">4</td><td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">33–40</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><strong>CBSE Formula:</strong> Percentage = CGPA × 9.5<br>
+                    <strong>Example:</strong> If your CGPA is 8.6, your percentage = 8.6 × 9.5 = <strong>81.7%</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What is the percentage formula?</h3>
+                    <p>Percentage = (Obtained Marks / Total Marks) × 100. This universal formula applies to any number of subjects or semesters.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How to calculate percentage of marks of 6 subjects?</h3>
+                    <p>Add marks from all 6 subjects, divide by total maximum marks (e.g. 600), and multiply by 100. Use our calculator above for instant results.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How to calculate percentage of marks of 12th class?</h3>
+                    <p>Enter your 12th board marks for each subject in our calculator. It automatically adds them up and applies the percentage formula for you.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How to calculate percentage of 6 semesters?</h3>
+                    <p>Switch to the "Semester" tab, enter each semester's percentage, and we calculate the average. You can also enter SGPA values which we convert automatically.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How to calculate percentage of marks in grade system?</h3>
+                    <p>Switch to the "Grade/CGPA" tab, enter your CGPA, select your board (CBSE uses × 9.5), and we instantly convert it to a percentage.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is 75% a good percentage?</h3>
+                    <p>Yes. 75% is generally considered a First Division in most Indian boards. 60%+ is First Division, 45–59% is Second Division, and 33–44% is Third Division (Pass).</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How to calculate percentage of marks of 5 subjects?</h3>
+                    <p>Same as 6 subjects — add all 5 obtained marks, divide by total max (e.g. 500), multiply by 100. Our tool handles any number of subjects dynamically.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Does this 10th mark percentage calculator work for all boards?</h3>
+                    <p>Yes. Whether you are from CBSE, ICSE, State Board, or any international board, the percentage formula is universal. Simply enter your marks and max marks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#logo-gradient-footer)" />
+                            <path d="M20 10L28 15V25L20 30L12 25V15L20 10Z" stroke="white" stroke-width="2" stroke-linejoin="round" />
+                            <circle cx="20" cy="20" r="3" fill="white" />
+                            <defs><linearGradient id="logo-gradient-footer" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#6366F1" /><stop offset="1" stop-color="#A855F7" /></linearGradient></defs>
+                        </svg>
+                        <span>ENC Converter Tools</span>
+                    </div>
+                    <p>Your privacy matters. Convert, decrypt, and optimize files securely without ever uploading your data.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#article">Guide</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../about-us.html">About Us</a></li>
+                        <li><a href="../disclaimer.html">Disclaimer</a></li>
+                        <li><a href="../privacy-and-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms-and-services.html">Terms of Service</a></li>
+                        <li><a href="../contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ENC Converter Tools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="calculator.js"></script>
+</body>
+
+</html>
