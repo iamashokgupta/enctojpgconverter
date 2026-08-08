@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="canonical" href="https://enctojpgconverter.online/">
     <!-- Primary Meta Tags -->
     <title>ENC to JPG - Convert .enc to .jpg Online Free</title>
     <meta name="title" content="ENC to JPG - Convert .enc to .jpg Online Free">
@@ -53,15 +54,13 @@
         "price": "0",
         "priceCurrency": "USD"
       },
-      "description": "Free online tool to convert encrypted ENC files to JPG format without losing image quality. Supports batch conversion and multiple encryption formats including WhatsApp backups and S-63 maritime charts.",
+      "description": "Free online tool to attempt converting encrypted ENC files to JPG format. Extracts images from supported ENC files directly in your browser.",
       "featureList": [
         "Convert ENC to JPG",
         "Batch image processing",
         "High-resolution conversion",
-        "Secure file decryption",
-        "Support for WhatsApp backups",
-        "S-63 maritime chart conversion",
-        "No file upload required - client-side processing"
+        "Client-side processing",
+        "No file upload required"
       ]
     }
     </script>
@@ -105,21 +104,17 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Convert <span class="gradient-text">ENC to JPG</span> Online
+                    <span class="gradient-text">ENC to JPG</span> Converter
                 </h1>
 
                 <p class="hero-subtitle">
-                    Free online .enc to .jpeg converter. Extract and save images from encrypted .enc files without
-                    losing image quality.
-                    Works on iPhone, Android, and desktop. Convert WhatsApp backups, S-63 maritime charts, CopySafe
-                    encrypted photos to JPG/JPEG.
-                    Batch image processing with secure file decryption. 100% client-side - your files never leave your
-                    device.
+                    Free online ENC to JPG converter. An ENC file is an encrypted or encoded file format. 
+                    This tool attempts to extract and save images from supported .enc files into standard JPG format.
+                    100% client-side processing - your files stay on your device and are never uploaded to any server.
                 </p>
                 <div class="hero-badges">
-                    <span class="badge">🔒 100% Secure & Private</span>
+                    <span class="badge">🔒 Client-Side Processing</span>
                     <span class="badge">📱 iPhone & Android</span>
-                    <span class="badge">🎨 No Quality Loss</span>
                     <span class="badge">📦 Batch Processing</span>
                 </div>
             </div>
@@ -210,13 +205,13 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🔐</div>
-                    <h3>100% Secure & Private</h3>
-                    <p>All conversions happen client-side in your browser. Files never leave your device.</p>
+                    <h3>Client-Side Processing</h3>
+                    <p>Your files stay in your browser. Nothing is uploaded to any server, ensuring complete privacy.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3>Lightning Fast</h3>
-                    <p>Convert ENC to JPG in seconds without any quality loss or compression artifacts.</p>
+                    <h3>Fast Conversion</h3>
+                    <p>Convert supported ENC files to JPG instantly directly in your browser.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📦</div>
@@ -231,12 +226,12 @@
                 <div class="feature-card">
                     <div class="feature-icon">🎨</div>
                     <h3>High Quality Output</h3>
-                    <p>Maintain original image quality during conversion without any degradation.</p>
+                    <p>Output is rendered at high quality (95% JPEG quality) to preserve visual details.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
-                    <h3>100% Free Forever</h3>
-                    <p>No hidden fees, no subscriptions, no limits. Convert unlimited files for free.</p>
+                    <h3>Free to Use</h3>
+                    <p>No hidden fees, no subscriptions. Use our tool to convert your files for free.</p>
                 </div>
             </div>
         </div>
@@ -269,222 +264,135 @@
         </div>
     </section>
 
+    <!-- New Informational Sections -->
+    <section class="informational-content" style="padding: 60px 0;">
+        <div class="container">
+            <h2 class="section-title">Understanding ENC Files</h2>
+            <div class="content-grid" style="display: grid; gap: 40px; margin-top: 30px;">
+                
+                <div class="content-block">
+                    <h3>What Is an ENC File?</h3>
+                    <p>The <strong>.enc</strong> file extension simply stands for "encoded" or "encrypted". It is not a standardized format like JPEG or PDF. Instead, it is a generic extension used by hundreds of different applications to indicate that a file has been secured or altered.</p>
+                    <p>Because there is no universal standard for an ENC file, a .enc file created by one application (like a secure chat app) will have a completely different structure than a .enc file created by another application (like a medical imaging device).</p>
+                </div>
+
+                <div class="content-block">
+                    <h3>Are All ENC Files the Same?</h3>
+                    <p><strong>No.</strong> This is the most important thing to know about ENC files. Some ENC files are just standard images that have been renamed. Others use simple XOR encryption, while many use advanced AES encryption (like WhatsApp backups). Unless you have the specific decryption key and know the exact method used to encrypt it, an advanced ENC file cannot be opened or converted.</p>
+                </div>
+                
+                <div class="content-block">
+                    <h3>How ENC to JPG Conversion Works</h3>
+                    <p>Our tool runs locally in your browser and attempts to extract images using a few common methods:</p>
+                    <ul style="margin-left: 20px; color: var(--text-secondary); line-height: 1.6;">
+                        <li><strong>Header Scanning:</strong> We scan the file for common image signatures (like JPEG magic bytes `FF D8 FF`) to see if an image is embedded inside a wrapper.</li>
+                        <li><strong>Basic Decryption:</strong> If you provide a password, we attempt basic XOR decryption to unlock simple encoded files.</li>
+                        <li><strong>Format Shifting:</strong> If the file is just a renamed image, we restore it to the proper JPG format.</li>
+                    </ul>
+                </div>
+                
+                <div class="content-block">
+                    <h3>Why Is My ENC File Not Converting?</h3>
+                    <p>If your conversion fails or produces a blank/corrupted image, it is likely because:</p>
+                    <ul style="margin-left: 20px; color: var(--text-secondary); line-height: 1.6;">
+                        <li><strong>Unsupported Encryption:</strong> The file uses strong, proprietary encryption (like End-to-End messaging apps) that cannot be broken without the original app and private keys.</li>
+                        <li><strong>Not an Image:</strong> The original file was a document, video, or database, not an image.</li>
+                        <li><strong>File Corruption:</strong> The file was damaged during download or transfer.</li>
+                    </ul>
+                    <p>For more details, see our <a href="enc-to-jpg-not-working/" style="color: var(--primary-color);">Troubleshooting Guide</a>.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
-    <section class="faq" id="faq">
+    <section class="faq" id="faq" style="background: rgba(255, 255, 255, 0.02); padding-top: 60px;">
         <div class="container">
             <h2 class="section-title">Frequently Asked Questions</h2>
             <div class="faq-grid">
                 <div class="faq-item">
-                    <h3>What is an ENC file?</h3>
-                    <p>An ENC file is an encrypted file that can come from various sources including WhatsApp backups,
-                        S-63 maritime electronic charts, CopySafe protected media, or generic encryption software. Our
-                        tool helps decrypt and convert these to viewable JPG images.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How do I open .enc files?</h3>
-                    <p>To open .enc files, you need to decrypt them first. Our converter automatically detects the
-                        encryption type and converts the file to JPG format, making it viewable on any device including
-                        iPhone and Android.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How to change ENC to JPG?</h3>
-                    <p>Simply drag and drop your .enc file into our converter tool. The tool will automatically extract
-                        images from the .enc file and save them as JPG. You can then download the converted images
-                        instantly.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Can I convert WhatsApp backup ENC files?</h3>
-                    <p>Yes! Our tool supports ENC files from WhatsApp backups. Simply upload the .enc file and if it's
-                        encrypted with a password, enter it when prompted.</p>
+                    <h3>Can this tool decrypt WhatsApp encrypted backups?</h3>
+                    <p>Our tool attempts to extract media from basic ENC files, but we cannot break standard WhatsApp End-to-End (E2E) encryption. If your WhatsApp .enc file relies on their secure key system, it can only be restored through the official WhatsApp app.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Will I lose image quality when converting ENC to JPG?</h3>
-                    <p>No! We preserve 100% of the original image quality during conversion. There's no
-                        compression or quality loss in the ENC to JPG conversion process. All images are extracted
-                        without losing any quality.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Can I batch convert multiple ENC files at once?</h3>
-                    <p>Yes! Our batch image processing feature allows you to convert multiple ENC files to JPG
-                        simultaneously.
-                        Just drag and drop all your files at once and they'll all be processed together.</p>
+                    <p>When an image is extracted and re-saved as a JPG, it is rendered at 95% quality. While this maintains excellent visual fidelity, technically JPG is a lossy format. For 100% lossless conversion, we recommend our <a href="enc-to-png-converter/" style="color: var(--primary-color);">ENC to PNG converter</a>.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Is my data safe?</h3>
-                    <p>Yes! All file processing happens locally in your browser. Your files are never uploaded to any
-                        server, ensuring complete privacy and security for your encrypted photos.</p>
+                    <p>Yes. All file processing happens locally in your web browser. Your files are never uploaded to any server, ensuring complete privacy.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I batch convert multiple ENC files at once?</h3>
+                    <p>Yes, our batch image processing feature allows you to convert multiple ENC files to JPG simultaneously. Just drag and drop all your files at once.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Related Tools Section for SEO Internal Linking -->
+    <!-- ENC Tools & Resources Section -->
     <section class="related-tools" style="padding: 60px 0; background: rgba(255, 255, 255, 0.02); border-top: 1px solid rgba(255, 255, 255, 0.05);">
         <div class="container">
-            <h2 class="section-title">More Free ENC Tools</h2>
-                                                                                                                                                                                                            <div class="tools-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                                                                                                                                                                                                                <a href="aadhar-card-front-and-back-a4-size/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Aadhar A4 Print</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Combine Aadhar front & back perfectly onto an A4 page.</p>
-                    </div>
-                </a>
-                <a href="increase-image-size-in-kb/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Increase Image Size</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Increase image size in KB/MB for official portal minimums.</p>
-                    </div>
-                </a>
-                <a href="reduce-image-size-in-kb/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Compress to KB</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Reduce image size to exactly 20KB, 50KB, or 100KB.</p>
-                    </div>
-                </a>
-                <a href="add-text-to-photo-online/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Free Photo Text Tool</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Easily add custom text, names, and dates to any photo.</p>
-                    </div>
-                </a>
-                <a href="percentage-calculator-online/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Percentage Calculator</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Calculate percentage of marks, CGPA, semesters instantly.</p>
-                    </div>
-                </a>
-                <a href="add-name-date-on-photo-online/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Name & Date on Photo</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Add name, date & text onto photos with passport crop presets.</p>
-                    </div>
-                </a>
-                <a href="powerpoint-to-pdf-converter-online/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">PowerPoint to PDF</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert PPT and PPTX presentations to static PDF documents securely.</p>
-                    </div>
-                </a>
-                <a href="resize-image-in-cm-online/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Resize Image in CM</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Change photo size to specific CM/MM dimensions for passports.</p>
-                    </div>
-                </a>
-                <a href="png-to-text-converter-online/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Image to Text (OCR)</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Extract text from images instantly using free client-side OCR.</p>
-                    </div>
-                </a>
-                <a href="html-file-opener-online/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">HTML File Opener</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Open HTML files, edit code, and convert Webpages to PDF/JPG instantly.</p>
-                    </div>
-                </a>
-                <a href="convert-photo-to-pencil-sketch-online-free/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Photo to Sketch</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Turn your photo into a beautiful pencil sketch online instantly.</p>
-                    </div>
-                </a>
-                <a href="watermark-pdf-online/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Watermark PDF</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Add text or image watermarks to your PDFs online for free.</p>
-                    </div>
-                </a>
-                <a href="image-compress-online-reduce-image-size/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Image Compressor</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Reduce image size to 20KB or 50KB free online.</p>
-                    </div>
-                </a>
-                <a href="browser-based-heic-converter-fast/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Browser Based HEIC</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Unlimited fast browser based HEIC converter.</p>
-                    </div>
-                </a>
-                <a href="convert-avif-to-jpg-online-no-upload/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">AVIF to JPG Converter</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert AVIF to JPG online with no upload free.</p>
-                    </div>
-                </a>
-                <a href="pdf-to-jpg-300dpi/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">High Res PDF to JPG</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert high-resolution PDFs to 300 DPI JPGs for free.</p>
-                    </div>
-                </a>
-                <a href="safe-online-enc-to-jpg-converter-free/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Safe ENC to JPG</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">100% safe client-side converter with 50 KB compression.</p>
-                    </div>
-                </a>
-                <a href="convert-webp-to-jpg-without-losing-quality-online/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Lossless WebP to JPG</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert WebP and AVIF to JPG without losing quality.</p>
-                    </div>
-                </a>
-                <a href="heic-to-jpg-offline/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Offline HEIC to JPG</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Browser-based offline extension to convert HEIC.</p>
-                    </div>
-                </a>
-                <a href="live-photo-to-jpg/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Live Photo Batch to JPG</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert iPhone Live Photos to JPG in batch instantly.</p>
-                    </div>
-                </a>
-                <a href="iphone-photo-enc-extension-fix/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">iPhone Photo ENC Fix</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Fix iPhone photo ENC extension issues and convert HEIC to JPG easily.</p>
-                    </div>
-                </a>
-                <a href="batch-webp-to-jpg-converter-online-no-limit/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Batch WebP to JPG</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert WebP and AVIF to JPG online with absolutely no limits.</p>
-                    </div>
-                </a>
-                <a href="convert-jfif-to-jpg-bulk-free/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Bulk JFIF to JPG</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert JFIF to JPG in bulk instantly. No upload required.</p>
-                    </div>
-                </a>
-                <a href="convert-heic-to-jpg-client-side-no-upload/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">HEIC Client-Side Converter</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert HEIC to JPG securely in your browser with no uploads.</p>
-                    </div>
-                </a>
-                <a href="samsung-heic-to-jpg-converter/" style="text-decoration: none; color: inherit;">
-                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Samsung HEIC to JPG</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert Samsung HEIC photos directly to JPG format.</p>
-                    </div>
-                </a>
+            <h2 class="section-title">ENC Tools & Resources</h2>
+            <div class="tools-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                
                 <a href="enc-to-png-converter/" style="text-decoration: none; color: inherit;">
                     <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: var(--spacing-xs); font-size: 1.25rem;">ENC to PNG Converter</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert your encrypted files directly to high-quality PNG images.</p>
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">ENC to PNG Converter</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert your encrypted files directly to lossless PNG images.</p>
                     </div>
                 </a>
-                <a href="index.html" style="text-decoration: none; color: inherit;">
+                
+                <a href="enc-to-pdf-converter/" style="text-decoration: none; color: inherit;">
                     <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                        <h3 style="color: var(--text-primary); margin-bottom: var(--spacing-xs); font-size: 1.25rem;">ENC to JPG Converter</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert .enc files to compressed JPG photos. Smaller files, ideal for photographs.</p>
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">ENC to PDF Converter</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Convert ENC image files into a single PDF document.</p>
                     </div>
                 </a>
+                
+                <a href="enc-file-viewer/" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">ENC File Viewer</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">View supported ENC files directly in your browser.</p>
+                    </div>
+                </a>
+                
+                <a href="enc-to-allfile-converter.html" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Universal ENC Converter</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Encrypt or decrypt files using AES encryption.</p>
+                    </div>
+                </a>
+                
+                <a href="how-to-open-enc-image-file-on-pc/" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">PC ENC Viewer Guide</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Learn how to open and view ENC images on Windows & Mac.</p>
+                    </div>
+                </a>
+                
+                <a href="convert-enc-to-jpg-on-android-without-app/" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Android ENC Guide</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">How to convert ENC files on Android devices safely.</p>
+                    </div>
+                </a>
+                
+                <a href="what-is-an-enc-file/" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">What is an ENC File?</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Understand different types of ENC files and how they work.</p>
+                    </div>
+                </a>
+                
+                <a href="enc-to-jpg-guide/" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;">Conversion Guide</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Step-by-step instructions on converting ENC to JPG.</p>
+                    </div>
+                </a>
+                
             </div>
         </div>
     </section>
@@ -522,12 +430,12 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Our Tools</h4>
+                    <h4>ENC Resources</h4>
                     <ul>
-                        <li><a href="whatsapp-image-to-jpg-converter/">WhatsApp Image to JPG</a></li>
-                        <li><a href="how-to-open-enc-image-file-on-pc/">PC ENC Viewer</a></li>
-                        <li><a href="convert-enc-to-jpg-on-android-without-app/">Android ENC to JPG</a></li>
-                        <li><a href="whatsapp-enc-file-to-jpg-png-jpeg-converter-online/">WhatsApp ENC to JPG</a></li>
+                        <li><a href="what-is-an-enc-file/">What is an ENC File?</a></li>
+                        <li><a href="enc-to-jpg-guide/">Conversion Guide</a></li>
+                        <li><a href="enc-to-jpg-not-working/">Troubleshooting</a></li>
+                        <li><a href="how-to-open-enc-file/">How to Open ENC</a></li>
                         <li><a href="enc-to-png-converter/">ENC to PNG</a></li>
                         <li><a href="enc-to-pdf-converter/">ENC to PDF</a></li>
                         <li><a href="enc-file-viewer/">ENC File Viewer</a></li>

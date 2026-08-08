@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (mode === 'enc-to-jpg') {
             if(fileInput) fileInput.setAttribute('accept', '.enc');
             if(uploadTitle) uploadTitle.textContent = 'Drag & Drop ENC files here';
-            if(uploadInfo) uploadInfo.textContent = 'Supports .enc files from WhatsApp, S-63, CopySafe, and more';
+            if(uploadInfo) uploadInfo.textContent = 'Upload .enc files to attempt conversion to image format';
             if(convertBtnText) convertBtnText.textContent = 'Convert to JPG';
             if(passwordLabel) passwordLabel.textContent = 'Decryption Key/Password (if required):';
         } else {
@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             } catch (error) {
                 console.error(`Error converting ${file.name}:`, error);
-                showNotification(`Failed to convert ${file.name}`, 'error');
+                showNotification(error.message || `Failed to convert ${file.name}`, 'error');
             }
 
             // Small delay for UI feedback
@@ -329,8 +329,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     };
 
                     img.onerror = () => {
-                        // If not a valid image, try as-is
-                        resolve(blob);
+                        // If not a valid image, it's likely an unsupported encryption format
+                        reject(new Error("This ENC file could not be converted. It may use an unsupported encryption format."));
                     };
 
                     img.src = imageUrl;
@@ -431,15 +431,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function whatsappDecrypt(data) {
-        // WhatsApp media files often use a simple encryption
-        // This is a simplified version - real WhatsApp encryption is more complex
-        const result = new Uint8Array(data.length);
-
-        for (let i = 0; i < data.length; i++) {
-            result[i] = data[i];
-        }
-
-        return result;
+        // Note: Real WhatsApp End-to-End encrypted backups (.crypt14, .crypt15, etc.) 
+        // CANNOT be decrypted by a client-side tool without the private keys.
+        // This placeholder function only returns the original data and relies on
+        // header scanning to find already-decrypted or unencrypted thumbnails.
+        return data;
     }
 
     // ===========================
